@@ -1,0 +1,65 @@
+---
+title: "Ethics of Interpretation"
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        header#title-block-header {
+          display: none !important;
+        }
+        </style>
+---
+
+## We Are What We Pretend to Be, so We Must Be Careful About What We Pretend to Be
+
+Howard W. Campbell Jr. sits in a prison cell in Israel waiting to be tried for war crimes, thinking through the life that brought him there. 
+
+He had been born in the United States, moved to Germany as a boy, grown into adulthood there, and built a life for himself inside German cultural life as a playwright. By the time the Nazi regime consolidated power, he was not an outsider looking in. He was embedded. During the war he became one of the regime’s English-language radio voices: polished, articulate, memorable, and useful. He could take brutality and make it sound composed. He could take ideology and make it sound orderly. He could make evil sound as though it belonged to the normal world.
+
+The inward defense he carries with him into that cell is that he was not only what he appeared to be. While broadcasting for the Reich, he was also passing coded information to American intelligence. That secret mattered enormously to him, because it let him tell himself that the role was only a role, that the voice on the radio was a performance in service of some higher purpose. But the broadcasts still went out. They were still heard by people who knew nothing about the hidden messages. They still gave Nazi Germany exactly what propaganda requires: reach, tone, and a human voice capable of making cruelty sound rational.
+
+That is why Vonnegut’s warning cuts deeper than a slogan. *We are what we pretend to be, so we must be careful about what we pretend to be*. The point is not that inner motives never matter. It is that motives do not erase consequences once our work enters the world and begins shaping other people’s lives. Good intent, or even no intent at all, does not erase the impact of actions.
+
+Public health begins from a much better premise. Most people enter it because they want to reduce suffering, prevent harm, improve the conditions people live in, and see people better off than they were before. But that is exactly why the warning matters here. The danger is usually not theatrical villainy. The danger is that an analyst can believe they are merely describing the world while their work quietly helps institutions sort, blame, neglect, or punish the people inside it. Statistical authority does not arrive as a neutral mist despite a veil of objectivity. It arrives in reports, dashboards, grants, manuscripts, policy memos, risk scores, maps, and briefings. Once it leaves the analyst’s desk, it starts doing social work whether the analyst acknowledges that or not.
+
+### What numbers can do at their best
+
+That work can be profoundly good. Florence Nightingale did not use mortality data merely to describe that soldiers were dying. She used counts, rates, and visual display to show that large shares of those deaths were preventable and bound up with sanitation, crowding, and conditions of care. John Snow did not map cholera cases as a decorative exercise. He used pattern, proximity, and comparison to challenge vague explanations and support a more specific account of where the danger was coming from. In both cases, statistical reasoning helped move suffering out of the realm of fate and into the realm of preventable harm. The point was not simply to count better. It was to make denial harder.
+
+That is one side of statistical history and it deserves to be remembered clearly. Numbers can expose what power would prefer remain blurry. They can turn anecdote into pattern, pattern into evidence, and evidence into a case for intervention. At their best, they make it harder to call injustice normal and harder to call preventable death inevitable.
+
+### What numbers have also done in the service of harm
+
+The other side of the history is not a footnote. Modern statistics did not grow only inside benevolent curiosity. Francis Galton coined eugenics and tried to turn heredity into a program for ranking and improving human beings. Karl Pearson helped build statistical machinery that is still taught everywhere while also directing that work through openly eugenic institutions. R. A. Fisher’s brilliance does not erase the fact that he, too, supported eugenic ideas. The arithmetic did not become wicked on its own. The methods were made to serve a moral and political project that treated some people as more worth reproducing, protecting, educating, or even allowing to remain in the population than others.
+
+In the United States, those ideas did not stay in journals or lectures. They were folded into institutions. Pedigree charts, family studies, institutional counts, psychiatric labels, intelligence testing, and supposedly scientific classifications of defect, dependency, and degeneracy were used to make coercion sound responsible. Forced sterilization programs did not present themselves as cruelty. They presented themselves as efficiency, hygiene, social protection, and modern administration, and they were given legal cover in cases such as *Buck v. Bell*. That is part of what makes this history so useful to remember: evil does not always arrive screaming. Sometimes it arrives in tabulations, classifications, and recommendations that sound tidy enough to survive a committee meeting.
+
+Nazi racial hygiene pushed that logic farther and made its violence less deniable. Classification, registry, hereditarian ideology, public-health language, and state power were fused into a machinery for exclusion, sterilization, segregation, and murder. The categories looked technical. The record-keeping looked administrative. The language often sounded scientific. The experiments were performed by doctors. None of that made the project less barbaric. It made barbarism easier to organize. A clean table can still be part of a dirty system.
+
+That is the sharper lesson. The problem is not only that numbers can be misread. It is that descriptive differences can be attached to stories about worth, fitness, danger, intelligence, disorder, or social value, and those stories can then be made to look as though they came from the numbers themselves. They did not. They came from people using numbers to launder judgment into something that sounded objective.
+
+### Why “just reporting the numbers” is not an escape hatch
+
+This is why “I’m just reporting the numbers” is not a serious moral position. Numbers do not speak on their own. People choose what to count, how to define categories, what comparisons to emphasize, what uncertainty to mention, what alternatives to suppress, and what language to put around the result before it travels. Those choices are not decoration. They are part of the analysis.
+
+A technically correct sentence can still do reckless social work. A disparity can be framed as a signal that conditions differ, or it can be framed as evidence that a group itself is the problem. Missingness can be shown, or it can be buried. A denominator can be included, or the drama of the numerator can be allowed to do all the talking. A result can be released with plausible alternatives standing beside it, or it can be allowed to harden into a single-cause story because that story is easier to understand, easier to repeat, and more flattering to institutions that would rather blame people than conditions.
+
+Once a result enters the world from a trusted source, it does not remain a private intellectual exercise. It enters funding decisions, staffing priorities, media coverage, policing, clinical triage, eligibility rules, and the informal common sense of whoever reads it. That is why intention is not enough. Scientists, like everyone else, can tell themselves a reassuring story about what they meant. The public still has to live with what the work actually does.
+
+### What care looks like in practice
+
+Care in analysis is not softness, and it is not a ritual disclaimer at the end of a report. It is a discipline of making it harder for your own work to be used lazily or cruelly. That begins with naming the comparison precisely enough that the audience knows what was actually compared, in whom, where, and over what time. It continues by showing the denominator, the exclusions, the missingness, and the category rules that make the result interpretable in the first place. It requires putting at least one plausible alternative explanation beside the favored interpretation when the pattern could too easily be turned into blame. It requires resisting the temptation to let a group label masquerade as a mechanism. And it requires matching action to evidence: sometimes a pattern justifies urgent response before the cause is settled, but urgency is not the same thing as certainty, and certainty should not be performed just because action is needed.
+
+The point of those moves is not to drain momentum from a result. It is to keep momentum attached to what the evidence can actually support. Good analysts do not merely make claims legible. They make overclaiming harder. They leave enough structure around a result that other people can see what the number means, what it does not yet mean, and what kinds of harm could follow if the distinction is ignored.
+
+### When fluent systems make this easier to forget
+
+Modern analytic culture adds one more risk. We now live among tools that can generate polished explanations faster than evidence can be checked. A dashboard can look finished while the framing is still crude. A model output can feel authoritative while its categories remain shaky. A chatbot can produce an elegant paragraph that sounds exactly like interpretation while offering no real grounding at all. The old temptation was to confuse technical language with truth. The newer temptation is to confuse fluency with judgment.
+
+That does not reduce human responsibility. It concentrates it. The easier it becomes to generate plausible explanation on demand, the more important it becomes to know exactly what you are defending when you repeat, publish, summarize, or scale a result. A polished sentence can still be a costume. Campbell’s tragedy was not that he lacked a private story about himself. It was that the public world was shaped by what he performed there. Statistical work carries the same danger whenever outward authority outruns inward honesty. What enters the world is the performance, not the alibi.
+
+### Takeaway
+
+Statistical work is never weightless. It can make preventable harm visible, strengthen the case for intervention, and sharpen public understanding. It can also sort people into categories that invite blame, justify exclusion, or help institutions make violence sound reasonable. The difference is not only in the formula. It is in the choices around the formula: what is counted, how it is framed, what alternatives are admitted, what claims are withheld, and whether the analyst remembers that the world will experience the result, not the private justification.
+

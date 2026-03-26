@@ -1,0 +1,20 @@
+---
+format:
+  html
+---
+
+# So It Goes: Numbers, Nonsense, and Not Quite Knowing
+
+Learning Objective: By the end of this module, you will be able to interpret public-health differences more honestly by identifying what was counted, out of how many, over what period, and compared to what; distinguish counts, proportions, rates, prevalence, and incidence as different ways of describing burden and change; and explain why a descriptive difference is not automatically a causal explanation.
+
+Before many bad statistical arguments, there is usually a quieter mistake first: treating a number as if it explains itself. A count can sound large without a denominator. A percentage can sound precise without a baseline. A rate can sound authoritative without a time window. A comparison can sound meaningful without telling you whether the groups, places, or periods are actually comparable. If you miss that first layer, everything downstream starts drifting. The dashboard may still look polished. The chart may still render. The report may still sound confident. It just may not support the conclusion being drawn from it.
+
+That is why this module comes here. Before probability, before inference, and before later methods start asking whether a result is statistically convincing, you need a more basic and more useful habit: ask what kind of difference you are actually looking at. Is this a difference in raw counts, in burden relative to population size, in pace over time, in prevalence at a point or period, in incidence as new occurrence, or in a pattern that is only being described rather than explained? That question determines what the number can honestly say.
+
+This is also where public-health data start becoming harder to read than they first appear. Not all differences mean the same thing. Some reflect underlying population size. Some reflect time frame. Some reflect how the event was defined. Some reflect who got counted, tested, screened, or included. Some are real descriptive signals. Some are artifacts of framing. In other words, public-health numbers are not just facts sitting in a table. They are measured claims made under particular definitions, over particular periods, against particular reference points.
+
+::: callout-note
+**Keep this rule for the rest of the module:** before you interpret a number, ask what was counted, out of how many, over what period, and compared to what.
+:::
+
+If you build that reflex early, later material stops feeling arbitrary. A count versus a rate, prevalence versus incidence, a descriptive association versus a causal claim: those are not just vocabulary differences. They are consequences of what kind of comparison you are making and what kind of conclusion the data can actually support.

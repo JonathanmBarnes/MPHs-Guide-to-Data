@@ -1,0 +1,193 @@
+---
+title: "Choosing a Distribution"
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        header#title-block-header {
+          display: none !important;
+        }
+        </style>
+filters:
+  - quizdown
+---
+
+## You Must Choose, But Choose Wisely.
+
+This page checks whether the ideas from this module hold together in concrete situations. Choose the most honest interpretation in each case.
+
+```quizdown
+---
+shuffle_answers: true
+---
+
+### A fair coin lands heads five times in a row. What is the best read of the **next** flip?
+
+1. [ ] Tails is now somewhat more likely because the run has gone on too long
+1. [ ] Heads is now somewhat more likely because the coin seems to be running hot
+1. [x] The next flip is still a 50-50 event, even though five heads in a row feels structured
+1. [ ] A streak this long is enough by itself to show the coin is probably biased
+
+> A short run can feel meaningful without changing the probability of the next draw.
+
+### You choose 1 of 3 doors. The host opens another door and shows a goat. Why is switching still better than staying?
+
+1. [ ] Because your first choice becomes weaker once one of the losing doors is revealed
+1. [x] Because the host had to reveal a goat, so the two unopened doors are not carrying the same information
+1. [ ] Because the opened door’s chance gets split evenly across the two unopened doors
+1. [ ] Because the unopened new door becomes better as soon as the host takes an action
+
+> The setup only looks even if you ignore that the host’s move was constrained.
+
+### In a screening group of 100 people, 20 truly have the condition and 80 do not. Which option gives the **odds** of the condition?
+
+1. [ ] 20%
+1. [ ] 20 out of 100
+1. [x] 20 to 80
+1. [ ] 80 to 20
+
+> Probability uses the whole group. Odds compare cases with non-cases. :contentReference[oaicite:2]{index=2}
+
+### Two studies report the same association. One gives a **risk ratio of 2.0** and the other gives an **odds ratio of 2.0**. What is the safest first read?
+
+1. [ ] They are saying exactly the same thing in two equivalent ways
+1. [ ] They imply the same increase in probability, just written in different language
+1. [x] They point in the same direction, but they are not on the same scale
+1. [ ] The odds ratio is always the cleaner summary because it sounds more dramatic
+
+> Risk and odds can move in the same direction without moving by the same amount. :contentReference[oaicite:3]{index=3} :contentReference[oaicite:4]{index=4}
+
+### A condition is rare, and a screening test is very accurate. In a large screening program, why can a positive result still be less convincing than people expect?
+
+1. [ ] Because rare conditions are usually too uncommon for screening results to mean much
+1. [ ] Because sensitivity matters less once the condition becomes unusual
+1. [x] Because the positive group can still contain many people without the condition when the condition is rare
+1. [ ] Because a test stops being reliable once it is applied to a very large population
+
+> After a positive result, the real question is about the mix inside the positive group. :contentReference[oaicite:5]{index=5}
+
+### A weekly case count rises from 18 last week to 25 this week. What is the best first question before calling that a real shift?
+
+1. [ ] Does 25 sound high enough to worry about on its own?
+1. [ ] What explanation for the increase seems most plausible right now?
+1. [x] Is a change from 18 to 25 unusual for counts like these, or still within the way weeks often bounce around?
+1. [ ] Is 25 above the average of the last two weeks combined?
+
+> The first check is whether the change is unusual for that kind of process, not whether it merely went up.
+
+### A county tracks **days from abnormal screening to completed follow-up**. Which pattern should you expect first?
+
+1. [ ] Most cases should gather tightly around one middle value with equally short tails on both sides
+1. [ ] The delays should mostly fall into a few neat categories with very little spread within them
+1. [x] Many cases may finish fairly soon, with a smaller number stretching much farther out
+1. [ ] Each delay length should be about equally common if the process is working properly
+
+> Delay variables often create many shorter waits and a smaller number of much longer ones. :contentReference[oaicite:6]{index=6}
+
+
+
+
+
+
+### Two clinics both average 24 minutes of patient wait time. Clinic B has much wider patient-to-patient spread than Clinic A. What should you avoid assuming right away?
+
+1. [ ] That Clinic B likely has a more uneven wait-time process from patient to patient
+1. [ ] That Clinic A’s waits are probably more tightly clustered around its own average
+1. [x] That Clinic B’s average wait must therefore be estimated much less precisely
+1. [ ] That the two clinics can still share the same average while differing in spread
+
+> Spread in the raw waits and precision of the estimated average are related, but they are not the same thing.
+
+### Which is the most plausible reason why Clinic B might have the wider patient-to-patient spread?
+
+1. [ ] Clinic B probably saw fewer patients overall, so its waits would naturally end up more spread out
+1. [x] Clinic B may be in a busier urban setting, where triage demands, walk-ins, and uneven arrival patterns create more variable waits
+1. [ ] Clinic B’s average wait matches Clinic A’s, so the wider spread is probably just random noise around the same center
+1. [ ] Clinic B likely has a wider confidence interval too, since wider spread in waits and wider uncertainty around the average are basically the same thing
+
+> A wider spread usually points to a process that produces more uneven individual experiences.
+
+### Even so, Clinic A has the wider confidence interval for its average wait. Which is the most plausible reason why?
+
+1. [x] Clinic A may be a smaller rural clinic that sees fewer patients, so its average is estimated from less information even if waits are more consistent
+1. [ ] Clinic A probably has more extreme wait times hidden in the data, and that must be what widened the interval
+1. [ ] Clinic A may be a rural clinic and the average is likely less trustworthy because they usually have less standardized workflows
+1. [ ] Clinic A and Clinic B cannot really have the same average if one confidence interval is wider than the other
+
+> A wider confidence interval often reflects a smaller sample behind the estimate, not a more chaotic wait-time process.
+
+### If you had to report this finding, what would be the most defensible conclusion?
+
+1. [ ] Clinic B appears worse overall. Its wider spread in wait times suggests the clinic is performing less reliably, and that is enough to make its average wait less trustworthy as a summary.
+1. [ ] Clinic A appears worse overall. The wider confidence interval suggests its wait-time process is probably more erratic from patient to patient, even if the reported average is the same.
+1. [x] The clinics appear similar in average wait time, but they differ in other important ways. Clinic B seems to have a more uneven wait-time process, while Clinic A’s average should be interpreted more cautiously because it is estimated from fewer patients.
+1. [ ] The clinics can mostly be treated as equivalent. Since the average wait time is the same in both places, the differences in spread and confidence interval do not materially change the interpretation.
+
+> The same average can sit on top of different underlying processes, and the certainty around that average can differ too.
+
+
+
+
+
+
+
+
+
+
+
+
+### A report gives a 95% confidence interval of **21 to 27 minutes** for a clinic’s **mean** wait time. What is the best interpretation?
+
+1. [ ] Most patients at that clinic waited somewhere between 21 and 27 minutes
+1. [ ] The next patient is likely to wait somewhere between 21 and 27 minutes
+1. [x] The clinic’s average wait is reasonably consistent with something in the 21 to 27 minute range
+1. [ ] The shortest and longest waits in the sample were 21 and 27 minutes
+
+> The interval is describing the mean, not the spread of individual waits. :contentReference[oaicite:8]{index=8}
+
+### A study increases its sample from 25 people to 100 people while measuring the same stable process. What should usually become less fragile?
+
+1. [ ] The individual outcomes themselves from one person to the next
+1. [ ] The role of randomness in the process being measured
+1. [x] The sample mean from one study to the next
+1. [ ] The need to think carefully about the shape of the data
+
+> A larger sample usually stabilizes the estimate more than it simplifies the world. :contentReference[oaicite:9]{index=9}
+
+### The raw wait times in a clinic stay right-skewed, but sample means from repeated samples look tighter and more regular. What changed?
+
+1. [ ] The clinic’s underlying wait-time process became less skewed once enough data were collected
+1. [ ] The individual waits became more similar because averaging smooths the patients themselves
+1. [x] The summary changed from individual waits to repeated averages, and averages behave more regularly than raw waits
+1. [ ] The original skew was probably just a small-sample illusion that disappeared with repetition
+
+> The world did not become cleaner. The summary became easier to work with. :contentReference[oaicite:10]{index=10}
+
+### A program enrolls patients because their **first blood pressure reading** was especially high. At the next visit, many readings are lower even before any clear treatment effect is established. What is an important possibility to keep in mind?
+
+1. [ ] The first readings were probably wrong, since extreme values are usually measurement mistakes
+1. [ ] The second readings should count more, because follow-up values are usually more trustworthy
+1. [x] Some drop is expected when people are selected for unusually high first readings, even if nothing else changed
+1. [ ] Any drop is already good evidence that the program is lowering blood pressure
+
+> When a group is chosen for extreme first values, later values often look less extreme even without a treatment effect. :contentReference[oaicite:11]{index=11}
+
+### A review team looks back after an outbreak and says the warning signs were obvious all along. What is a reasonable concern?
+
+1. [ ] The team is probably wrong about every warning sign they identified after the fact
+1. [ ] Once the outcome is known, earlier evidence no longer matters for understanding what happened
+1. [x] Knowing the ending may be making the earlier evidence look cleaner and more one-directional than it felt at the time
+1. [ ] Looking back after an outcome always turns the earlier story into something completely false
+
+> Once the ending is known, that knowledge can shape how earlier uncertainty is remembered and interpreted. :contentReference[oaicite:12]{index=12}
+
+### Group A starts with a 10% probability of an outcome. Group B starts with a 50% probability. In both comparisons, the **odds ratio is 2.0**. In which group would you expect the **bigger jump in probability**?
+
+1. [ ] Group A, because doubling odds should matter more when the starting probability is low
+1. [x] Group B, because the same odds ratio can translate into a larger probability jump at a higher baseline
+1. [ ] They should show the same probability jump, since the odds ratio is the same in both groups
+1. [ ] There is no way to say anything about probability once the result is written as an odds ratio
+
+> The same odds ratio does not map to the same probability change at every baseline. :contentReference[oaicite:13]{index=13}
+```

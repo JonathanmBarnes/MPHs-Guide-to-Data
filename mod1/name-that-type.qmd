@@ -1,0 +1,129 @@
+---
+title: "Classifying Variables"
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        header#title-block-header {
+          display: none !important;
+        }
+        </style>
+filters:
+  - quizdown
+---
+
+## Name That Type for $400
+
+Before you answer, use the module’s main question: **what are these values actually doing?**  
+Are they naming a group, showing order, counting whole units, or measuring along a scale?
+
+```quizdown
+## A column labeled `District` has values 1, 2, 3, and 4. What type of variable is it most likely to be?
+
+> The numbers look numeric, but here they are acting as IDs for places.
+
+1. [x] Nominal
+1. [ ] Ordinal
+1. [ ] Count (discrete)
+1. [ ] Measurement (continuous)
+
+## A symptom scale recorded as `none / mild / moderate / severe` is usually what type of variable?
+
+> The order matters, but the spacing between levels is not guaranteed to be equal.
+
+1. [ ] Nominal
+1. [x] Ordinal
+1. [ ] Count (discrete)
+1. [ ] Measurement (continuous)
+
+## Number of clinic visits in the last 12 months is usually what type of variable?
+
+> This is a count of whole events.
+
+1. [ ] Nominal
+1. [ ] Ordinal
+1. [x] Count (discrete)
+1. [ ] Measurement (continuous)
+
+## Systolic blood pressure measured in mmHg is usually what type of variable?
+
+> This is a measurement that could, in principle, be recorded more precisely.
+
+1. [ ] Nominal
+1. [ ] Ordinal
+1. [ ] Count (discrete)
+1. [x] Measurement (continuous)
+
+## Educational attainment such as `high school / some college / bachelor's / graduate degree` is usually what type of variable?
+
+> There is a real order, but the distance between levels is not a fixed numeric unit.
+
+1. [ ] Nominal
+1. [x] Ordinal
+1. [ ] Count (discrete)
+1. [ ] Measurement (continuous)
+
+## A survey response recorded as `Refused`, `Unknown`, and `Not applicable` should usually be treated as what type of variable?
+
+> These are categories about the record’s relationship to the question, not an amount.
+
+1. [x] Nominal
+1. [ ] Ordinal
+1. [ ] Count (discrete)
+1. [ ] Measurement (continuous)
+
+## Age recorded in whole years is trickier than it first looks. In most simple datasets, how is it best treated?
+
+> Age is conceptually time lived, but the recorded version here is in whole-year steps.
+
+1. [ ] Nominal
+1. [ ] Ordinal
+1. [x] Count (discrete)
+1. [ ] Measurement (continuous)
+
+## Age grouped into bands such as `0–5`, `6–10`, and `11–15` is what type of variable in that grouped form?
+
+> The grouped version is no longer acting like a direct measurement.
+
+1. [ ] Nominal
+1. [x] Ordinal
+1. [ ] Count (discrete)
+1. [ ] Measurement (continuous)
+
+## Calories on a nutrition label are usually shown as whole numbers. What type are calories really?
+
+> The label rounds them, but the underlying thing is still a measure of energy.
+
+1. [ ] Nominal
+1. [ ] Ordinal
+1. [ ] Count (discrete)
+1. [x] Measurement (continuous)
+
+## You ate 3 oranges this week. In that unit, what type of variable is “number of orange slices eaten”?
+
+> You are counting whole oranges.
+
+1. [ ] Nominal
+1. [ ] Ordinal
+1. [x] Count (discrete)
+1. [ ] Measurement (continuous)
+
+## Now suppose you switch from counting oranges to measuring orange mass in grams. What type is it now?
+
+> The unit changed from counting objects to measuring an amount.
+
+1. [ ] Nominal
+1. [ ] Ordinal
+1. [ ] Count (discrete)
+1. [x] Measurement (continuous)
+
+## Which question best captures the reflex this whole module is trying to build?
+
+> This is the habit that should come before summaries, graphs, or tests.
+
+1. [ ] “Can I average this?”
+1. [ ] “What software command should I use?”
+1. [x] “What kind of thing do these values represent?”
+1. [ ] “Does this column contain numbers?”
+```

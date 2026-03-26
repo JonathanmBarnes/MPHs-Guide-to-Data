@@ -1,0 +1,37 @@
+---
+format:
+  html
+toc: false
+---
+
+
+
+\
+
+::::: title-page
+# Don't Panic {.unnumbered}
+
+\
+
+\
+
+\
+
+\
+
+\
+
+
+::: tagline
+## *An MPH's Guide to Data*
+### *For Those Who'd Rather Not*
+:::
+
+\
+
+\
+
+::: author
+Jonathan Barnes
+:::
+:::::

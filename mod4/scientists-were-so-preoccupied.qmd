@@ -1,0 +1,97 @@
+---
+title: "Ethics, Risk & Oversight"
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        header#title-block-header {
+          display: none !important;
+        }
+        </style>
+---
+
+## Scientists Were So Preoccupied with Whether or not They Could, They Didn’t Stop to Think if They Should
+
+By the lunch scene in *Jurassic Park*, the argument has already moved. Nobody at the table is still asking whether the dinosaurs can be made. That part is over. Hammond is playing host. Gennaro is already talking about coupon days. The park has crossed from discovery into operations.
+
+That is what gives Malcolm’s warning its force. He is not objecting to imagination. He is objecting to the speed with which technical success is being mistaken for permission. The room is already discussing how to package, scale, insure, and manage a thing they barely understand well enough to govern.
+
+Modern generative AI keeps creating that room.
+
+Once a system can draft, summarize, translate, transcribe, imitate a voice, generate an image, produce meeting notes, search records, or act through connected tools, the conversation changes. People stop asking what kind of system it is and start asking where it can be inserted.
+
+### When generated output becomes the first version of the case
+
+Institutions do not have to hand final authority to a generative system for that system to start shaping outcomes. It is enough for generated output to become the first thing the next person sees.
+
+The summary gets read before the source material. The translated message gets forwarded before a bilingual human sees it. The synthetic transcript becomes the record people quote. The drafted response becomes the path of least resistance.
+
+That is already power.
+
+A benefits office, hospital system, newsroom, school district, or research group can slide into this without ever announcing that a model is now exercising judgment. A case history is summarized. An intake call is transcribed. Notes are cleaned up. A follow-up message is drafted. A translation is normalized into cleaner prose. By the time a human reviewer opens the file, the case already has a shape. Certain details have been foregrounded. Others have been flattened. Uncertainty has been made tidier than the underlying situation deserved.
+
+The problem is not just that the system is complicated. The problem is contestability. When someone is harmed by a model-shaped workflow, the institution often cannot produce the kind of explanation consequential systems usually owe people. It may be possible to inspect the prompt, compare versions, or spot an obvious failure. What is often missing is a clean account of why one fact was emphasized, why one ambiguity disappeared, why one recommendation sounded firmer than the record justified, or why the output arrived in exactly this tone of confidence.
+
+The person affected ends up fighting a framing before they can even fight a decision. At that point the problem is no longer only epistemic. A model-shaped reading of the case has already started becoming a governance problem.
+
+### When review turns into approval
+
+Generative systems usually enter through convenience. First they draft. Then they summarize. Then they triage, rank, fill forms, assemble briefings, write outreach, and suggest the next action. By the time a human arrives, much of the real shaping work may already be over.
+
+Under time pressure, review collapses into scanning for obvious breakage. That is not the same thing as judgment. It is exception handling.
+
+That is why *human in the loop* is a weak reassurance when it is left undefined. Oversight is real only when the reviewer has enough time, enough evidence, enough authority, and enough responsibility to interrupt the process in a meaningful way. Otherwise the human presence is ceremonial. The output has already set the terms.
+
+Responsibility starts smearing across the user, the supervisor, the vendor, the procurement decision, and the institution that normalized the workflow. “The model drafted it.” “The assistant suggested it.” “A human approved it.” None of those statements has to be false for accountability to become harder to locate. Plausible deniability does not require anyone to pretend the system is a person. It only requires the system to become the middle of the process.
+
+```{mermaid}
+flowchart TD
+  MODEL["⬤ Model output"]:::center
+
+  MODEL --> USER["User<br/>The model drafted it"]
+  MODEL --> SUPER["Supervisor<br/>A human approved it"]
+  MODEL --> VENDOR["Vendor<br/>The system performed as designed"]
+  MODEL --> PROC["Procurement<br/>We followed the evaluation"]
+  MODEL --> INST["Institution<br/>The workflow was normalized"]
+
+  classDef center fill:#4a5568,color:#fff,stroke:#fff
+```
+
+Tool-connected generative AI pushes that farther. A model that drafts text can mislead. A model that can search records, populate fields, send email, schedule actions, update case notes, or trigger downstream software can convert synthetic judgment into operational consequence.
+
+### Cheap output is built from expensive human work
+
+Generative output feels strangely detached from labor because the interface is so clean.
+
+Type a prompt. Get a paragraph. Upload an image. Get a variation. Provide a voice sample. Get a clone. Ask for slides. Get a deck.
+
+None of that arrives from nowhere. Modern generative AI rests on enormous stores of human writing, code, design, photography, music, recorded speech, labeled data, moderation work, evaluation work, annotation work, and the quieter labor of filtering, cleaning, documenting, and maintaining the systems that make the interface look effortless.
+
+That is why authorship and consent are not side issues. So is uncompensated training capture. If expert writing, artwork, code, or recorded voice becomes raw material for a system that can reproduce useful surface features at scale, the question is not only who gets credit. It is who gets extracted from.
+
+Labor substitution follows close behind. If a hospital leans on generated patient communication, if a school substitutes generated lesson materials for commissioned work, if an agency relies on synthetic translation or synthetic summary in place of paid expertise, the institution is not simply speeding up output. It is deciding which kinds of human work remain visible, valued, and paid.
+
+Review gets thinned. Attribution gets thinned. Apprenticeship gets thinned. The slower human processes through which people learn how to weigh evidence, document uncertainty, develop a style, and become accountable for what they make get thinned too. What started as convenience in one workflow becomes labor redesign across the institution.
+
+### The infrastructure is part of the ethics
+
+By the time generative AI feels ordinary to a user, a large amount of infrastructure has already disappeared behind the interface.
+
+This is where public discussion often goes soft. Water use matters in some places, but treating water as the whole environmental story turns a structural issue into a slogan. The deeper issue is concentration: concentrated compute, concentrated capital, concentrated cloud control, concentrated data-center buildout, and concentrated electricity demand.
+
+Data centers sit somewhere. They take land somewhere. They draw from grids somewhere. They compete for capacity somewhere. Communities are asked to absorb the construction, power demand, cooling load, tax deals, and long-term dependence whether or not they asked for the product logic that created the demand.
+
+The convenience on screen is resting on physical systems and political choices off screen. By then the problem is no longer only about model error or workflow design. Governance risk has become infrastructure risk.
+
+When schools, hospitals, agencies, and research groups build around a small number of model providers, they are not merely adopting a tool. They are adapting themselves to infrastructure they do not control: pricing, outages, model changes, safety defaults, regional buildout, access terms, and strategic priorities set elsewhere.
+
+### What the mistake really is
+
+The deepest danger is not that modern generative AI sometimes produces strange output. It is that institutions begin to treat synthetic fluency as if it were understanding, and then reorganize consequential work around that mistake.
+
+Once that happens, the harms do not stay at the level of one bad answer. They become harder to inspect, harder to contest, easier to deny, cheaper to scale, and more physically embedded.
+
+### Takeaway
+
+Human oversight is structural, not optional. Modern generative AI can be useful, but it is not a moral agent, not a neutral summary layer, and not a substitute for accountable judgment. The real warning is the one Malcolm sees at the table: when technical success starts being mistaken for permission, people begin building institutions around a system they have fundamentally misread.

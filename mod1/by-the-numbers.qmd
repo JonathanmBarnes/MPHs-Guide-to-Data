@@ -1,0 +1,41 @@
+---
+title: "Quantitative Data"
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        header#title-block-header {
+          display: none !important;
+        }
+        </style>
+---
+
+## By the Numbers for $800
+
+#### These variables let us count, measure, or track things like steps, cholesterol, or scores.
+
+Numeric data are amounts. They carry the idea of more versus less of the same thing. But there are two main kinds of numeric variables that matter here: **counts** and **measurements**. The formal terms you will see later are **discrete** for counts and **continuous** for measurements.
+
+**Counts** move in steps. Number of clinic visits, number of medications, number of children in a household, and missed appointments are all counted one unit at a time. You can have 0 visits, 1 visit, or 2 visits. The values move in whole jumps because you are counting events or objects.
+
+**Measurements** live on a scale. Height, weight, blood pressure, cholesterol, and temperature are not built out of whole objects in the same way. They can, at least in principle, be measured more finely and more precisely. The values are locating something along a continuum rather than counting whole units.
+
+The oranges example shows the difference clearly. If you ate 3 oranges this week, that is a count. In that unit, `3.4 oranges` feels wrong. If you count slices instead, slices become the unit and it is still a count. But if you measure orange mass in grams, you are no longer counting pieces. You are measuring an amount.
+
+Age is useful because it shows how representation can change how a variable behaves. Time lived is really a measurement. But age is often recorded in whole years, which can make it behave like a count in a simple table or plot. And once you band age into groups like `0–5`, `6–10`, and `11–15`, it stops acting like a numeric measurement in that dataset and starts acting like an ordinal variable instead. The underlying reality did not change. The working version of the variable did.
+
+Calories are another good edge case. People talk about “counting calories,” which makes them sound like a count. But calories are measuring energy. Even if food labels round them to whole numbers, the underlying thing is still a measurement. The rounding changes the precision of what you recorded, not the type of variable itself.
+
+This matters downstream for the same reason it mattered with categories. Once you know whether something is a count or a measurement, you are much less likely to force the wrong summary or the wrong visual onto it. Counts and measurements are both numeric, but they do not behave in exactly the same way, and later methods depend on that distinction.
+
+```{mermaid}
+flowchart LR
+    A["Numeric data"] --> B["Counts<br/>(discrete)"]
+    A --> C["Measurements<br/>(continuous)"]
+    B --> D["Whole steps matter"]
+    C --> E["Finer precision still makes sense"]
+```
+
+A useful check here is simple: are you counting whole things, or measuring more-or-less of the same thing along a scale? If you can answer that question, you are usually most of the way to the right interpretation.
+

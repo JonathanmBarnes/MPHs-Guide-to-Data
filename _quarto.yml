@@ -1,0 +1,114 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  sidebar:
+    title: "An MPH’s Guide to Data"
+    pinned: false
+
+  chapters:
+    - text: "Don't Panic"
+      file: index.qmd
+
+    - part: "Welcome!"
+      chapters:
+        #- text: "Why Data Matters"
+        #  file: mod0/life-universe-everything.qmd
+        #- text: "What This Guide Is"
+        #  file: mod0/mostly-harmless.qmd
+        #- text: "What Statistics Actually Is"
+        #  file: mod0/not-to-be-taken-literally.qmd
+        #- text: "Check Your Starting Point"
+        #  file: mod0/the-answer-is-42.qmd
+        - text: "About This Project"
+          file: mod0/so-long-and-thanks.qmd
+
+    - part: "Data Types"
+      chapters:
+        - text: "Overview"
+          file: mod1/index.qmd
+        - text: "Why Variable Type Matters"
+          file: mod1/big-questions.qmd
+        - text: ""
+          file: mod1/common-bonds.qmd
+        - text: ""
+          file: mod1/by-the-numbers.qmd
+        - text: ""
+          file: mod1/name-that-type.qmd
+        - text: ""
+          file: mod1/context-clues.qmd
+
+    - part: "Describing Differences"
+      chapters:
+        - text: "Overview"
+          file: mod2/index.qmd
+        - text: ""
+          file: mod2/differences-matter.qmd
+        - text: ""
+          file: mod2/ice-nine.qmd
+        - text: ""
+          file: mod2/rates-prevalence-timing.qmd
+        - text: ""
+          file: mod2/description-vs-cause.qmd
+        - text: ""
+          file: mod2/we-are-what-we-pretend.qmd
+        - text: ""
+          file: mod2/nice-nice-very-nice.qmd
+
+    - part: "Probability & Uncertainty"
+      chapters:
+        - text: "Overview"
+          file: mod3/index.qmd
+        - text: ""
+          file: mod3/always-account-variable-change.qmd
+        - text: ""
+          file: mod3/never-go-sicilian.qmd
+        - text: ""
+          file: mod3/he-gets-on-base.qmd
+        - text: ""
+          file: mod3/maybe-god-isnt-omnipotent.qmd
+        - text: ""
+          file: mod3/you-know-how-this-turns-out.qmd
+        - text: ""
+          file: mod3/you-must-choose.qmd
+        #- text: ""
+        #  file: mod3/dollar-fifty-late-fees.qmd
+
+    - part: "Generative AI"
+      chapters:
+        - text: "Overview"
+          file: mod4/index.qmd
+        - text: ""
+          file: mod4/its-not-thinking.qmd
+        - text: ""
+          file: mod4/a-little-discretion-cooper.qmd
+        - text: ""
+          file: mod4/i-still-see-things.qmd
+        - text: ""
+          file: mod4/chain-reaction.qmd
+        - text: ""
+          file: mod4/too-much-garbage.qmd
+        - text: ""
+          file: mod4/scientists-were-so-preoccupied.qmd
+
+
+format:
+  html:
+    number-sections: true
+    number-depth: 2
+    theme:
+      light: [sandstone, styles.scss]
+    page-layout: full
+    grid:
+      body-width: 1200px
+      sidebar-width: 300px
+      margin-width: 300px
+    #css: styles.css   # <-- point this at your copied CSS filename
+    toc: true
+    toc-depth: 2
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

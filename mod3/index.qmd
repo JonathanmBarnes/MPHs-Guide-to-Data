@@ -1,0 +1,23 @@
+---
+format:
+  html
+---
+
+# The House Always Wins—Probability, Chance, and the Shapes of Uncertainty
+
+#### Module 3
+
+Learning Objective: By the end of this module, you will be able to explain probability as long-run behavior rather than single-case certainty, distinguish probability from odds as different ways of framing the same underlying uncertainty, and describe how distributions, repetition, and hindsight shape what you can honestly conclude from noisy public-health data.
+
+Before many mistakes about uncertainty, there is usually a quieter mistake first: treating one result as if it tells the whole story. A surprising outcome can feel meaningful. A short streak can feel like momentum. A sharp change can feel like proof that something underneath really shifted. Sometimes that instinct is right. Often it is just what randomness looks like when viewed too close.
+
+That is why this module comes here. Before formal inference, before confidence intervals and hypothesis tests start showing up everywhere, you need a more basic habit: ask what would happen if the same process kept running. Probability is not a promise about the next case. It is a way of describing what tends to happen when the rules stay the same and outcomes keep accumulating. Odds describe that same uncertainty in a different frame. Distributions show what the spread of outcomes looks like once you stop staring at one case at a time.
+
+This is also where public-health numbers become slippery in a different way. Some claims sound larger because they are framed dramatically. Some patterns look meaningful because the baseline disappeared. Some apparent signals are just ordinary bounce in a noisy system. A testing result, a case curve, a screening claim, a program chart, or a dramatic headline can all be numerically correct and still badly misread if the reader does not know what kind of variability is normal.
+
+::: callout-note
+**Keep this rule for the rest of the module:** before you decide that a result means something important, ask what kind of outcome this is, what comparison is being made, and what amount of variation would be ordinary if the same process kept running.
+:::
+
+If you build that reflex early, later ideas stop feeling mystical. Long-run frequency, odds, distributions, sampling, and hindsight bias all become different ways of answering the same practical question: is this something I should treat as signal, or am I being pushed around by noise?
+

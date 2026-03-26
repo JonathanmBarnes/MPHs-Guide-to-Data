@@ -1,0 +1,343 @@
+---
+title: "Confidence With Numbers"
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        header#title-block-header {
+          display: none !important;
+        }
+        </style>
+---
+
+## Maybe God Isn't Omnipotent. Maybe He's Just Been Around So Long He Knows Everything.
+
+The alarm goes off to the same song. The same voices on the radio push the same forced cheer into the room. Outside, the same little town waits in the same winter light. A man slips on the street. Someone asks the same question. Another person appears at the same corner at almost the same moment as yesterday. At first that kind of repetition would feel eerie. After enough mornings, it would start to feel like information.
+
+Once the shock wears off, the repeated day separates into layers. Some things happen almost every time. Some happen often enough to anticipate, but not perfectly. Some stay noisy no matter how familiar the setting becomes. That is the part of *Groundhog Day* that belongs here. Phil does not become omniscient. He becomes calibrated. He gets harder to surprise because he has seen the same process play out again and again.
+
+That is also the bargain statistics makes with repeated observation. If the process underneath what you are recording is genuinely stable, repetition makes your summary less fragile. It does not make the world stop varying. It does not turn the next single outcome into a guarantee. It narrows how much random bounce can push your estimate around.
+
+Imagine one clinic with a stable scheduling system, the same basic patient mix most days, and the same definition of what counts as waiting time. Some patients are roomed quickly. Some wait a while. A few wait much longer than anyone would like. The waiting times themselves are spread out. The real question is what repeated observation does to your understanding of that spread.
+
+```{r}
+#| include: false
+library(ggplot2)
+library(tibble)
+library(dplyr)
+library(scales)
+
+COL_BG       <- "#f7f6f3"
+COL_TEXT     <- "#343A40"
+COL_BLUE     <- "#2f6f8f"
+COL_ORANGE   <- "#E69F00"
+COL_DARK     <- "#4A4E69"
+COL_LIGHT    <- "#e7e5df"
+COL_GRID     <- "#cfdceb"
+COL_POINTS   <- "#7f8c8d"
+
+Plot_theme <- function(
+    base_font    = c("Avenir Next", "Verdana", "sans-serif"),
+    heading_font = c("Trebuchet MS", "Avenir", "Verdana", "sans-serif"),
+    base_size = 12
+) {
+  base_family    <- base_font[[1]]
+  heading_family <- heading_font[[1]]
+
+  theme_minimal(base_size = base_size, base_family = base_family) %+replace% theme(
+    plot.background  = element_rect(fill = COL_BG, color = NA),
+    panel.background = element_rect(fill = COL_BG, color = NA),
+    strip.background = element_rect(fill = COL_BG, color = NA),
+    text = element_text(color = COL_TEXT),
+    panel.grid.major = element_line(color = COL_GRID, linewidth = 0.45),
+    panel.grid.minor = element_line(color = "#e3edf7", linewidth = 0.25),
+    axis.line = element_line(color = "#9fb3c1"),
+    axis.text.x  = element_text(color = COL_TEXT, family = base_family, size = 12),
+    axis.text.y  = element_text(color = COL_TEXT, family = base_family, size = 12),
+    axis.title.x = element_text(color = COL_TEXT, family = heading_family, face = "bold", size = 14),
+    axis.title.y = element_text(color = COL_TEXT, family = heading_family, face = "bold", size = 14, angle = 90, margin = margin(r = 4)),
+    strip.text = element_text(family = heading_family, size = 12, face = "bold", color = "#2f3e46"),
+    plot.title = element_text(
+      family = heading_family, size = 16, face = "bold",
+      color = "#2f3e46", margin = margin(b = 8, unit = "pt")
+    ),
+    plot.subtitle = element_text(family = base_family, size = 12.5, color = "#3b4a55", margin = margin(b = 6)),
+    plot.caption = element_text(family = base_family, size = 10, color = "#3b4a55"),
+    legend.title = element_text(family = heading_family, face = "bold", color = "#2f3e46"),
+    legend.text  = element_text(family = base_family, color = "#3b4a55"),
+    plot.margin = margin(t = 6, r = 10, b = 6, l = 10, unit = "pt")
+  )
+}
+
+wait_params <- local({
+  mean_wait <- 24
+  sd_wait   <- 12
+  sigma2 <- log(1 + (sd_wait^2 / mean_wait^2))
+  sigma  <- sqrt(sigma2)
+  mu     <- log(mean_wait) - sigma2 / 2
+  list(mu = mu, sigma = sigma, mean = mean_wait, sd = sd_wait)
+})
+
+sim_waits <- function(n) {
+  x <- rlnorm(n, meanlog = wait_params$mu, sdlog = wait_params$sigma)
+  pmin(x, 90)
+}
+```
+
+### What repeated observation buys you
+
+Start recording waits from that clinic one patient at a time and the average is easy to shove around. One unusually short wait or one ugly outlier can move it a lot. Keep recording from the same process and that average still moves, but less and less. The long-run summary starts to settle even though the individual waits never stop bouncing. That is the practical form of the law of large numbers: not a ceremonial theorem name, but a reason to distrust tiny early samples and to treat later summaries as harder to knock off center.
+
+```{r}
+#| classes: bare-plot
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 11
+#| fig-height: 5.4
+#| out-width: "100%"
+#| fig-align: center
+
+set.seed(204)
+
+n_patients <- 500
+waits <- sim_waits(n_patients)
+run_df <- tibble(
+  patient = seq_len(n_patients),
+  wait = waits,
+  running_mean = cumsum(wait) / seq_len(n_patients)
+)
+
+ggplot(run_df, aes(patient, running_mean)) +
+  geom_line(linewidth = 1.05, color = COL_BLUE) +
+  geom_hline(yintercept = wait_params$mean, linetype = "dashed", linewidth = 0.9, color = COL_ORANGE) +
+  scale_y_continuous(labels = label_number(suffix = " min")) +
+  labs(
+    title = "The average settles even while individual waits stay messy",
+    subtitle = "Same clinic process, accumulated patient by patient. The dashed line marks the underlying typical mean wait.",
+    x = "Patients observed",
+    y = "Running average wait"
+  ) +
+  Plot_theme()
+```
+
+The word *same* is doing real work there. This settling is not a reward for merely having a larger spreadsheet. It depends on repeated observation of the same kind of process. If staffing changes, triage rules change, the appointment mix shifts, or the definition of waiting time moves underneath you, then the average may still stabilize numerically while answering a different question than it did before.
+
+### Spread in people and uncertainty in the estimate are different problems
+
+The most useful distinction on this page is not between two formulas. It is between two kinds of variability. One lives in the clinic itself: patients really do have very different waits. The other lives in your summary: if you kept taking new samples from the same clinic, the estimated mean would wobble from sample to sample.
+
+Suppose the clinic's patient-to-patient standard deviation is about 12 minutes. With a sample of 25 patients, the standard error of the mean is about 12 / sqrt(25) = 2.4 minutes, so a rough 95% margin of error is about 1.96 x 2.4 ≈ 4.7 minutes. Push the sample to 100 patients and the standard error drops to about 1.2 minutes, with a margin of error around 2.4 minutes. The patients did not become more alike. The estimate simply became less fragile.
+
+A density view makes that easier to see because it preserves the shape of the waits instead of reducing them to a cloud of points. The orange region marks about one standard deviation of individual waits around the sample mean. The blue interval is much narrower because it is uncertainty in the mean, not the spread of patient experiences.
+
+```{r}
+#| classes: bare-plot
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 11
+#| fig-height: 5.8
+#| out-width: "100%"
+#| fig-align: center
+
+set.seed(305)
+
+x <- sim_waits(60)
+xbar <- mean(x)
+s <- sd(x)
+se <- s / sqrt(length(x))
+moe <- 1.96 * se
+ci <- c(xbar - moe, xbar + moe)
+
+df <- tibble(wait = x)
+dens <- density(x, from = 0, to = 90, n = 512)
+den_df <- tibble(wait = dens$x, density = dens$y)
+shade_df <- den_df %>% filter(wait >= xbar - s, wait <= xbar + s)
+y_ci <- max(den_df$density) * 0.10
+
+ggplot(den_df, aes(wait, density)) +
+  geom_area(fill = COL_LIGHT, alpha = 0.95) +
+  geom_area(data = shade_df, fill = COL_ORANGE, alpha = 0.35) +
+  geom_rug(data = df, aes(x = wait), inherit.aes = FALSE, sides = "b", alpha = 0.35, color = COL_DARK) +
+  geom_vline(xintercept = xbar, linetype = "dashed", linewidth = 0.9, color = COL_DARK) +
+  annotate("segment", x = xbar - s, xend = xbar + s,
+           y = max(den_df$density) * 0.86, yend = max(den_df$density) * 0.86,
+           linewidth = 5, color = COL_ORANGE, alpha = 0.85) +
+  annotate("text", x = xbar, y = max(den_df$density) * 0.93,
+           label = "about one SD across individual waits",
+           family = "Avenir Next", size = 4.2, color = COL_TEXT) +
+  annotate("segment", x = ci[1], xend = ci[2], y = y_ci, yend = y_ci,
+           linewidth = 5.2, color = COL_BLUE, alpha = 0.95) +
+  annotate("point", x = ci[1], y = y_ci, size = 2.8, color = COL_BLUE) +
+  annotate("point", x = ci[2], y = y_ci, size = 2.8, color = COL_BLUE) +
+  annotate("text", x = mean(ci), y = y_ci, label = "95% CI for the mean",
+           vjust = -1.0, family = "Trebuchet MS", fontface = "bold",
+           size = 4.4, color = COL_BLUE) +
+  scale_x_continuous(labels = label_number(suffix = " min"), limits = c(0, 90)) +
+  scale_y_continuous(breaks = NULL) +
+  labs(
+    title = "The patient waits stay wide even when the mean is estimated much more tightly",
+    subtitle = "Orange shows spread among individual waits. Blue shows uncertainty in the sample mean from the same sample.",
+    x = "Wait time",
+    y = NULL
+  ) +
+  coord_cartesian(clip = "off") +
+  Plot_theme() +
+  theme(
+    panel.grid = element_blank(),
+    axis.line.y = element_blank()
+  )
+```
+
+A box-and-whisker view compresses the same sample into a smaller summary. It is useful for seeing median, quartiles, and unusually long waits quickly, but it is less good than the density at showing the lived shape of the spread. That is why it works best here as a companion rather than a replacement.
+
+```{r}
+#| classes: bare-plot
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 11
+#| fig-height: 3.8
+#| out-width: "100%"
+#| fig-align: center
+
+box_df <- tibble(
+  group = "",
+  wait = x
+)
+
+ggplot(box_df, aes(wait, group)) +
+  geom_boxplot(
+    width = 0.34,
+    fill = COL_LIGHT,
+    color = COL_DARK,
+    outlier.color = COL_ORANGE,
+    outlier.fill = COL_ORANGE,
+    outlier.alpha = 0.85
+  ) +
+  geom_point(aes(x = xbar, y = group), size = 3.2, color = COL_BLUE) +
+  annotate("segment", x = ci[1], xend = ci[2], y = 1.22, yend = 1.22,
+           linewidth = 4.5, color = COL_BLUE) +
+  annotate("text", x = xbar, y = 1.34, label = "mean", family = "Avenir Next", size = 4.0, color = COL_BLUE) +
+  annotate("text", x = mean(ci), y = 1.46, label = "95% CI for the mean", family = "Trebuchet MS", fontface = "bold", size = 4.0, color = COL_BLUE) +
+  scale_x_continuous(labels = label_number(suffix = " min"), limits = c(0, 90)) +
+  labs(
+    title = "The boxplot summarizes the same spread more compactly",
+    subtitle = "The box and whiskers summarize the distribution of waits.\n The blue point and segment keep the mean and its uncertainty separate from that spread.",
+    x = "Wait time",
+    y = ""
+  ) +
+  coord_cartesian(clip = "off") +
+  Plot_theme() +
+  theme(
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.line.y = element_blank()
+  )
+```
+
+That is what confidence is trying to discipline. A confidence interval for the mean is not a claim about where most individual patients fall. It is a claim about how much the estimated mean would tend to wander if you kept resampling from the same underlying clinic process. Spread in the world and uncertainty in the estimate are related, but they are not the same thing and they should not be read as if they were.
+
+```{r}
+#| classes: bare-plot
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 11
+#| fig-height: 5.1
+#| out-width: "100%"
+#| fig-align: center
+
+moe_df <- tibble(
+  n = 5:250,
+  moe = 1.96 * wait_params$sd / sqrt(n)
+)
+
+key_df <- tibble(
+  n = c(25, 100),
+  moe = 1.96 * wait_params$sd / sqrt(c(25, 100)),
+  label = c("n = 25\nMOE ≈ ±4.7 min", "n = 100\nMOE ≈ ±2.4 min")
+)
+
+ggplot(moe_df, aes(n, moe)) +
+  geom_line(linewidth = 1.1, color = COL_BLUE) +
+  geom_point(data = key_df, aes(n, moe), size = 3, color = COL_ORANGE) +
+  geom_text(
+    data = key_df,
+    aes(n, moe, label = label),
+    hjust = c(1.15, -0.05),
+    vjust = c(1.35, 1.35),
+    family = "Avenir Next",
+    size = 4.1,
+    color = COL_TEXT
+  ) +
+  scale_y_continuous(labels = label_number(accuracy = 0.1, suffix = " min")) +
+  labs(
+    title = "More data narrows uncertainty, but not in a straight-line dramatic way",
+    subtitle = "The estimate keeps getting steadier as n grows, but each additional block of data buys a little less than the block before it.",
+    x = "Sample size",
+    y = "Approximate 95% margin of error"
+  ) +
+  Plot_theme()
+```
+
+That slow curve matters because people routinely imagine that doubling the data should nearly double the certainty. It does not. The interval shrinks with the square root of the sample size. You have to work much harder for each further reduction in wobble.
+
+### Why averages become easier to work with than the raw waits that produce them
+
+The clinic waits themselves can stay right-skewed because a few long waits really do happen. But repeated sample means from that same clinic behave more regularly than the raw waits do. Draw many samples of size 5 and average each one, then do the same for samples of size 25 and 100. The raw process stays lopsided. The means pull inward and become more bell-shaped. That is the central limit theorem in the form most people actually use it: repeated averages are easier to summarize, compare, and wrap intervals around than the individual observations they came from.
+
+```{r}
+#| classes: bare-plot
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 11
+#| fig-height: 7.0
+#| out-width: "100%"
+#| fig-align: center
+
+set.seed(410)
+
+raw_df <- tibble(wait = sim_waits(4000), panel = "Individual waits")
+
+sim_means <- function(n, reps = 2500) {
+  tibble(wait = replicate(reps, mean(sim_waits(n))), panel = paste0("Sample means (n = ", n, ")"))
+}
+
+means_df <- bind_rows(
+  raw_df,
+  sim_means(5),
+  sim_means(25),
+  sim_means(100)
+)
+
+means_df$panel <- factor(
+  means_df$panel,
+  levels = c("Individual waits", "Sample means (n = 5)", "Sample means (n = 25)", "Sample means (n = 100)")
+)
+
+ggplot(means_df, aes(wait)) +
+  geom_histogram(bins = 36, fill = COL_BLUE, color = COL_BG, alpha = 0.92) +
+  geom_vline(xintercept = wait_params$mean, linetype = "dashed", linewidth = 0.85, color = COL_ORANGE) +
+  facet_wrap(~ panel, ncol = 2, scales = "free_y") +
+  scale_x_continuous(labels = label_number(suffix = " min"), limits = c(0, 90)) +
+  labs(
+    title = "Raw waits stay skewed. Sample means become tighter and more regular.",
+    subtitle = "All four panels come from the same clinic process. Only the summary changes.",
+    x = "Wait time",
+    y = "Count"
+  ) +
+  Plot_theme()
+```
+
+None of that means the clinic has become simpler than it really is. It means averages have a more cooperative long-run shape than individual waits do. That is why confidence intervals and standard errors so often ride on mean-based summaries. The statistics are not claiming that the raw world is bell-shaped. They are claiming that repeated summaries of a stable process often behave in a way that is much easier to work with.
+
+That brings the chapter back to the repeated day. Familiarity earns better calibration only when you are still seeing the same underlying world. Change the process and yesterday's repetition stops buying today's confidence. A narrower interval around the wrong target is still wrong.
+
+### Takeaway
+
+Repeated observation of the same stable process can make your claims more confident because the estimate becomes less sensitive to random bounce, even while the individual outcomes remain messy. That is why long-run averages settle, why repeated sample means become easier to work with, and why confidence intervals narrow as more data accumulate. The confidence belongs to the summary, not to any single next outcome, and it only deserves that name if you are still measuring the same kind of world.
+

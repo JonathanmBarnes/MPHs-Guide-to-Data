@@ -1,0 +1,58 @@
+---
+title: "More to Explore"
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        header#title-block-header {
+          display: none !important;
+        }
+        </style>
+---
+
+## Nice, Nice, Very Nice: Additional Stuff, References, Links, and Whatever Else Belongs Here
+
+### Good uses of statistics and public-health data
+
+-   [Florence Nightingale and the rise of statistical thinking in nursing](https://pmc.ncbi.nlm.nih.gov/articles/PMC7660360/)
+-   [John Snow — Britannica biography](https://www.britannica.com/biography/John-Snow-British-physician)
+-   [Broad Street pump outbreak — Britannica](https://www.britannica.com/topic/Broad-Street-pump-cholera-outbreak-of-1854)
+
+### Dark history of statistics, measurement, and classification
+
+-   [Francis Galton — Britannica](https://www.britannica.com/biography/Francis-Galton)
+-   [Karl Pearson — Britannica](https://www.britannica.com/biography/Karl-Pearson)
+-   [Ronald Aylmer Fisher — Britannica](https://www.britannica.com/biography/Ronald-Aylmer-Fisher)
+-   [Fisher and eugenics](https://pmc.ncbi.nlm.nih.gov/articles/PMC8115641/)
+-   [Annals of Eugenics history](https://pmc.ncbi.nlm.nih.gov/articles/PMC3077531/)
+
+### Eugenics, scientific racism, and Nazi racial hygiene
+
+-   [USHMM: Eugenics](https://encyclopedia.ushmm.org/content/en/article/eugenics)
+-   [USHMM: The Biological State — Nazi Racial Hygiene, 1933–1939](https://encyclopedia.ushmm.org/content/en/article/the-biological-state-nazi-racial-hygiene-1933-1939)
+-   [USHMM: Forced Sterilization](https://encyclopedia.ushmm.org/content/en/article/forced-sterilization-a-form-of-nazi-persecution)
+-   [USHMM: Deadly Medicine — Creating the Master Race](https://encyclopedia.ushmm.org/content/en/article/deadly-medicine-creating-the-master-race)
+
+### When causal overreach causes harm
+
+-   [BMJ: How the case against the MMR vaccine was fixed](https://www.bmj.com/content/342/bmj.c5347)
+-   [BMJ editorial on the Wakefield paper](https://www.bmj.com/content/342/bmj.c7452)
+-   [The original 1998 Lancet paper, for context](https://www.thelancet.com/pdfs/journals/lancet/PIIS0140-6736%2897%2911096-0.pdf)
+
+### Risk communication and interpretation
+
+-   Relative vs absolute risk explainers
+-   Good denominator-aware reporting examples
+-   Bad denominator-free reporting examples
+-   Good uncertainty communication examples
+-   Examples where “significant” was treated as “important”
+
+### Visuals, tools, and extras
+
+-   Outside figures you might want later
+-   Applets, dashboards, videos, and demos
+-   Optional extensions for readers who want more
+-   Figures you may steal from yourself later for slides or teaching
+
+### 

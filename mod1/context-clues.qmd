@@ -1,0 +1,40 @@
+---
+title: "Further Resources"
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        header#title-block-header {
+          display: none !important;
+        }
+        </style>
+---
+
+## Context Clues for \$200
+
+#### This collection lets you explore, visualize, and make sense of data beyond the basics
+
+If you want a little more practice or a different explanation style, these are good places to keep going. The goal here is not to overload you. It is to give you a few reliable places to revisit the same ideas from a different angle.
+
+```{mermaid}
+flowchart LR
+    A["Nominal"] --> B["Counts / proportions"]
+    C["Ordinal"] --> D["Ordered counts / threshold shares"]
+    E["Discrete"] --> F["Counts / rates"]
+    G["Continuous"] --> H["Means / medians / histograms"]
+```
+
+### External resources
+
+- [Guide to Data Types and How to Graph Them in Statistics](https://statisticsbyjim.com/basics/data-types/)  
+  A plain-language reference for nominal, ordinal, discrete, and continuous data.
+
+- [CDC Field Epidemiology Manual: Describing Epidemiologic Data](https://www.cdc.gov/field-epi-manual/php/chapters/describing-epi-data.html)  
+  Useful once you want to see how variable type connects to real epidemiologic description.
+
+- [CDC NHANES Interactive Data Visualizations](https://www.cdc.gov/nchs/nhanes/visualization/index.htm)  
+  A good example of how public-health variables get summarized and displayed in practice.
+
+- [Data Carpentry: Data visualization with ggplot2](https://datacarpentry.org/R-ecology-lesson/visualizing-ggplot.html)  
+  Helpful if you want more exposure to how plot choice follows the structure of the data.

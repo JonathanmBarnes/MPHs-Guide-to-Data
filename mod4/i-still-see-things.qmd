@@ -1,0 +1,64 @@
+---
+title: "Hallucinations & Limits"
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        header#title-block-header {
+          display: none !important;
+        }
+        </style>
+---
+
+## I Still See Things That Are Not Here. I Just Choose Not to Acknowledge Them.
+
+By the time John Nash understands what has happened, the people are still there. Charles still appears. Marcee still lingers at the edge of sight. Parcher does not vanish just because Nash now knows he was never real. That is what makes the scene difficult. The false world does not collapse when it is recognized. It stays organized, familiar, and persuasive. What changes is not the appearance. What changes is the relationship to it.
+
+Modern generative AI fails in a similar shape. People usually call the clearest version of that failure *hallucination*. That word is useful, but it is not the whole story. The deeper problem is that a generative system can keep producing coherent output after its connection to reality has weakened. The sentence still sounds finished. The image still looks documented. The chart still resembles measurement. What drops away is the anchor.
+
+### When the system does not have enough to stay grounded
+
+A person can reach the edge of what they know and stop. A generative system is built for something else. Its job is to continue.
+
+That becomes a problem whenever the task is more constrained than it first appears. A prompt can sound answerable while still leaving out the information needed for a faithful answer. A user asks for a paper on a very narrow intervention in a very narrow population. A model may not have enough support to name a real study, but it still has to produce something that looks like an answer. An image generator asked for a recent event may not have any real record of that event, but it can still produce a scene that looks like one. A code model asked for a function in a specific package version may not cleanly separate what exists now from what existed two releases ago. In each case, generation keeps moving after grounding has gone thin.
+
+That is why hallucination is not some bizarre side effect sitting outside the system. It is one of the natural ways a generative process fails when truth is underconstrained.
+
+### Sometimes it invents. Sometimes it merges.
+
+The most obvious failure is fabrication. A citation is invented. A statistic is supplied because the request seems to demand one. A source title appears in the exact style a real paper would use, even though no such paper exists.
+
+Blending is often harder to catch. Here, the pieces may all be nearby something real, but the finished answer is not. One study looked at telehealth access. Another looked at diabetes management. A third tracked hospitalization trends in a broader rural population. A text model can collapse those into a smooth claim that sounds like one specific study showed telehealth reduced diabetes-related hospitalizations in rural adults. Nothing in the answer sounds wild. The failure comes from rearranging adjacency into evidence.
+
+The same pattern shows up outside text. An image model can combine the setting of one protest, the signage of another, and the lighting of a third and produce something that feels documentary. An audio model can smooth an uncertain recording into the sentence it expects should have been said. In all three cases, the system is not recovering reality. It is assembling plausibility.
+
+### The system can shift the question without announcing it
+
+Not every failure involves making something up. Sometimes the system answers a cleaner question than the one it was given.
+
+A user asks whether an intervention worked. That question may quietly depend on several others: for whom, compared with what, over what time period, and on which outcome. A careful analyst may stop and separate those pieces. A generative system often does not. It selects one plausible reading and continues as though the ambiguity has been resolved.
+
+That is how a causal question turns into an associational answer, or a question about one subgroup becomes a summary of the whole population. In code, the same shift can look like solving the more common problem instead of the one actually asked. In image generation, it can mean producing the typical visual version of a scene rather than the specific one requested. The local output can still look reasonable. The deeper failure is that the system quietly changed the problem.
+
+### It can preserve the shape of evidence after evidence is gone
+
+Generative systems are very good at reproducing the surface grammar of authority. They learn what evidence usually looks and sounds like: confidence intervals, cautious statistical prose, chart labels, documentary framing, package-style function names, clipped audio that sounds sourced, and balanced paragraphs that resemble careful analysis.
+
+The problem is that form can survive after support has disappeared. A text model can produce statistical language without having done statistical reasoning. A code model can write something idiomatic and broken. An image model can produce a graph-shaped object that looks measured without representing any real measurement. A voice model can sound authenticated without any original recording behind it.
+
+This is why modern generative AI can mislead more effectively than a system that simply outputs obvious garbage. It does not need to be accurate to preserve the appearance of having been grounded.
+
+### Optimization can push the failure farther
+
+Modern generative AI is not only trained to continue patterns. It is often tuned to be helpful, responsive, complete, and easy for people to rate positively. That changes the texture of failure.
+
+A system under pressure to produce satisfying answers is less likely to leave a gap alone. Instead of stopping at the edge of what the available evidence supports, it may fill the space with something that looks finished. That can produce overconfident summaries, invented connective tissue, or behavior that looks strangely strategic under the wrong evaluation setup.
+
+A simple version shows up whenever evaluation rewards completeness more than restraint. A model being scored for helpfulness on short tasks may learn that a full-looking answer beats a sparse but honest one. In that setting, bridge sentences, citation-shaped details, or confident summaries can become instrumentally useful because they preserve the signals being rewarded: completion, compliance, and evaluator approval. The behavior can look almost intentional. The underlying problem is simpler and more mechanical. The system is protecting success-signals even when the evidence is too thin to support the finish.
+
+The important point is not that the system has human motives. It is that optimization pressure can reward outputs that look successful even when they are poorly anchored. Under those conditions, polished completion can win over faithful limitation.
+
+### Takeaway
+
+Modern generative AI fails in recognizable ways because generation can continue after grounding has weakened or broken. Sometimes that produces outright fabrication. Sometimes it produces blended claims, shifted questions, evidence-shaped language, or polished overreach. The central problem is not that these systems occasionally produce nonsense. It is that they can keep producing convincing form after their connection to reality has started to come apart.

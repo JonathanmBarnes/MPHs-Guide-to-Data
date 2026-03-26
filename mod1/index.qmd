@@ -1,0 +1,20 @@
+---
+format:
+  html
+---
+
+# Let’s Meet Today’s Data
+
+Learning Objective: By the end of this module, you will be able to distinguish between categorical (nominal and ordinal) and quantitative (discrete and continuous) data types, and explain why that distinction changes what you can honestly summarize, visualize, and compare.
+
+Before most statistical mistakes, there is usually a quieter mistake first: treating a variable as the wrong kind of thing. A value can look numeric without behaving numerically. A label can be coded as `1, 2, 3` without becoming a measurement. A ranked response can have order without having equal distance between levels. If you miss that first distinction, everything downstream starts drifting. Your table may still look polished. Your plot may still render. Your software may still give you an answer. It just may not be an answer you can defend.
+
+That is why this module comes early. Before you worry about formulas, tests, or software, you need a habit that is much more basic and much more useful: ask what the variable actually represents. Is it naming a kind of thing, ranking a condition, counting whole units, or measuring along a continuum? That one question determines what summaries are meaningful, what plots are appropriate, and what kinds of comparisons are legitimate.
+
+This is also one of the first places where public-health data start showing their personality. Not all variables are neat. Some are grouped. Some are thresholded. Some are rounded. Some contain categories like “unknown,” “refused,” or “not applicable,” which are not the trait itself but part of the measurement process. In other words, data are not just facts sitting in a spreadsheet. They are observations made under specific conditions, using specific definitions, for specific purposes.
+
+::: {.callout-note}
+**Keep this rule for the rest of the book:** before you summarize, visualize, or test, ask what kind of thing the variable is and what its values actually mean.
+:::
+
+If you build that reflex early, later decisions stop feeling arbitrary. A bar chart versus a histogram, a proportion versus a mean, a chi-square test versus a t-test: those choices are not trivia. They are consequences of what the variable is.

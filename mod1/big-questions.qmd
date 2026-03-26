@@ -1,0 +1,42 @@
+---
+title: "Null"
+number-offset: 2
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        header#title-block-header {
+          display: none !important;
+        }
+        </style>
+---
+
+## Big Questions for $1000
+
+#### This is why understanding your data types makes all the difference between real public health insight and statistical confusion.
+
+Data are observations with context. A value is never just a value by itself. It is attached to a person, place, event, or condition, and it only makes sense when you know what it is supposed to represent. That is why one of the first useful habits in statistics is also one of the simplest: before you summarize anything, ask what kind of thing this variable is.
+
+Some variables sort observations into groups. Others record an amount. That sounds basic, but this is exactly where many bad summaries begin. A column can contain numbers and still not be measuring anything. A column can look tidy in a spreadsheet and still be the wrong kind of thing to average.
+
+Take blood pressure. As a measurement, systolic blood pressure is continuous. It makes sense to talk about a typical value, how spread out the values are, or how the measurements are distributed. But if you turn blood pressure into `hypertensive / not hypertensive`, you have changed the variable. Now it is no longer measuring “how much blood pressure.” It is sorting people into groups using a threshold. Both versions can be useful, but they answer different questions.
+
+Now take district. A column with values `1, 2, 3, 4` might look numeric at first glance. But if those values are district IDs, then they are nominal categories. District 4 is not more district than District 2. Averaging those values produces a neat-looking result that means nothing.
+
+Then there are variables that live in between the cleanest cases. A symptom scale like `none / mild / moderate / severe` is ordinal. The order matters, which gives it more structure than a purely nominal variable. But it is not a ruler. The jump from `none` to `mild` is not automatically the same kind of jump as `moderate` to `severe`. That is why “mean severity = 2.3” can sound more precise than the scale really allows.
+
+This matters because type controls what is honest downstream. It shapes what summaries make sense, what visuals are appropriate, and what kinds of comparisons are legitimate later. If you get the type wrong, you can end up with the wrong summary, the wrong graph, and eventually the wrong conclusion — all while the software happily gives you output.
+
+```{mermaid}
+flowchart TD
+    A["What do these values represent?"] --> B{"Group or amount?"}
+    B -- "Group" --> C{"Ordered?"}
+    B -- "Amount" --> D{"Counted or measured?"}
+    C -- "No" --> E["Nominal"]
+    C -- "Yes" --> F["Ordinal"]
+    D -- "Counted" --> G["Discrete"]
+    D -- "Measured" --> H["Continuous"]
+```
+
+That is the whole reflex in one diagram. The point is not to memorize vocabulary first. The point is to pause long enough to ask what the values are doing before you decide what to do with them.

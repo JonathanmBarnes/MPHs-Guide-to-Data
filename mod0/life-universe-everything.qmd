@@ -1,0 +1,12 @@
+---
+format:
+  html
+---
+
+## Life, the Universe, and Everything (Begins with Data) {.unnumbered}
+
+When widespread digital access first hinted at an “Age of Information,” many expected concrete evidence—not opinion—to steer public life, as previously restricted information in theory became accessible to everyone. We imagined a world where better decisions, and better results, would flow naturally from more effective research distribution, opened databases, faster computers, and interactive dashboards.
+
+Yet the abundance from that access soon became overload. Misinformation, packaged as simpler, more compact stories presented as fact, was easier to digest and more entertaining. These narratives raced through social platforms, blogs, and alternative news sites (even main ones)—spreading faster than careful analysis or responsible reporting could keep up. And when reality checks did try to catch up, they were often long, unengaging, and easy to ignore. It will be discussed throughout, but consistently scientists are seen not just as competent and intelligent, but unable to communicate their work. This creates a rift; and then you consider that it was estimated 57% of the US adult population reads at or below level two of five in the most recent PIAAC study.
+
+This is the paradox we face: information can only empower change when it’s translated clearly, ethically, and in ways that people can genuinely understand. That—not calculation or citation—is how your knowledge shapes decisions and lives in the world around us.

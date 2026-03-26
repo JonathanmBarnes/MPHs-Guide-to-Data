@@ -1,0 +1,77 @@
+---
+title: "How LLMs Work"
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        header#title-block-header {
+          display: none !important;
+        }
+        </style>
+---
+
+## It’s Not Thinking. It’s Just Following Patterns.
+
+In *The Imitation Game*, Christopher does not become important because it finally understands the war. The breakthrough comes when the team realizes the Germans are not writing purely random messages. They repeat themselves. Once Turing has a repeated phrase to anchor the search, Christopher can finally narrow the space enough to produce something usable. The room changes immediately. The people around the machine know what a decoded message could alter outside that room, what delay costs, and what being wrong might do. The machine does not know what any of that is. It has not become aware. It has become useful.
+
+Modern generative AI creates the same confusion. It can produce text, code, images, audio, and video that matter inside real human situations without grasping those situations as lived reality. The output may be polished, helpful, persuasive, or dangerous. None of that requires comprehension in the ordinary human sense. In language models, the mechanism is easiest to watch closely.
+
+### Patterns, probabilities, and tokens
+
+A language model does not receive a sentence the way a person does. It is not handed a finished idea and then asked to express that idea well. It receives tokens: smaller units that can be represented mathematically and related to one another inside the model. A token may be a whole word, part of a word, punctuation, or a familiar fragment. The exact boundaries vary by model, but the larger picture does not. The model begins with structured pieces of text, not with a human-style grasp of the whole sentence.
+
+```{mermaid}
+flowchart TD
+  A["Screening rates improved"]
+  A --> B["Screen"]
+  A --> C["ing"]
+  A --> D["rate"]
+  A --> E["s"]
+  A --> F["improv"]
+  A --> G["ed"]
+```
+
+
+Training pushes the model to get better at continuation. It is shown enormous amounts of text, makes guesses about what should come next, and is adjusted over and over so better continuations become more likely in similar settings while worse ones become less likely. What builds up is not just local word order. The model also absorbs recurring structure: how definitions usually unfold, what technical caution sounds like, how summaries compress longer passages, how code comments are often phrased, what balanced disagreement looks like, and what competent prose tends to do next. Those learned patterns become the basis for probability. Some continuations fit a given context strongly, some weakly, and most barely fit at all.
+
+### How generation unfolds
+
+When generation starts, the model does not pause, understand the situation, and then decide what to say. It takes the text so far and ranks possible next tokens. One token is selected, added back into the context, and the ranking happens again. A sentence that reads like a complete thought is built through repeated local choices.
+
+Suppose the prompt so far is *An incidence rate needs a*. The model may place relatively high probability on *time* and *denominator*, some probability on *population*, and very little on something out of place. If *time* is selected, the context becomes *An incidence rate needs a time*, and the next ranking changes. Now *window* or *period* become more likely than they were a moment earlier. The sentence is not being pulled from storage as a finished unit. It is being assembled step by step inside a shifting probability landscape shaped by the prompt and by the patterns learned during training.
+
+```{mermaid}
+flowchart TD
+  A["Context</br>An incidence rate needs a"] --> R["Rank candidate next tokens"]
+  P["Learned patterns</br>rates, time windows, denominators, technical phrasing"] --> R
+  R --> B["time</br>0.49"]
+  R --> C["denominator</br>0.31"]
+  R --> D["population</br>0.11"]
+  R --> E["graph</br>0.02"]
+  B --> F["Selected token</br>time"]
+  C --> F
+  D --> F
+  E --> F
+  F --> G["Updated context</br>An incidence rate needs a time"]
+  G --> H["Rank next tokens"]
+  H --> I["window</br>0.58"]
+  H --> J["period</br>0.22"]
+  H --> K["frame</br>0.09"]
+```
+
+Each step is local, but local does not mean shallow. The ranking is not a random guess and it is not detached from training. It is a probability distribution built from learned patterns. Change the wording and the ranking changes with it. *An incidence rate needs a* pulls toward one set of continuations. *A prevalence estimate needs a* pulls toward another. Different context activates different regions of the model’s learned statistical map.
+
+Modern generative AI is broader than language models, but the family resemblance is real. Image, audio, video, and code systems differ in architecture and in the units they operate over. They still learn statistical structure from large datasets and generate by moving through a constrained space of likely continuations under the current input. The medium changes. The absence of human-style understanding does not.
+
+### Fluency, judgment, and intuition
+
+Human reasoning leaves recognizable traces in expression. So do caution, synthesis, confidence, apology, expertise, and summary. A system trained on enough examples can reproduce those traces with striking fluency. Generated output is easy to overread. Many of the cues people use to infer understanding are themselves patterned features of language. A calm answer can sound judicious. A hedged paragraph can sound responsible. A polished explanation can feel as though someone is thinking carefully in real time. Sometimes the answer is also useful and correct, which makes the effect stronger.
+
+That still is not the same thing as comprehension. A model can produce the surface form of judgment without sharing the situational grip that human judgment draws on. It does not know what it feels like to be accountable for a recommendation, to notice that a denominator quietly changed halfway through a paragraph, to distrust a citation because the source and claim do not fit together, or to recognize that an image looks smooth while placing an impossible detail in the scene. It can imitate the language of intuition because intuition also leaves patterns behind in text. It does not possess intuition in the ordinary sense.
+
+The difference shows up most clearly when polished continuation and grounded judgment pull apart. A model may write in a calm, professional voice while inventing a source, smoothing over a missing assumption, or carrying forward a false premise the prompt already contained. Fluency survives that separation surprisingly well. Human readers often do not, because the writing still sounds like someone who knows what they are doing.
+
+### Takeaway
+
+Modern generative AI does not first comprehend a situation and then express that comprehension in text, code, images, sound, or video. It learns statistical structure from very large datasets and generates by moving through probability-weighted patterns under the current input. In language models, that process is visible token by token. The result can be fluent, useful, and impressive while still lacking the kind of understanding, intuition, and situational judgment people often assume they are seeing. That gap matters because the output can still enter decisions, records, classrooms, clinics, and workflows where someone has to carry consequences the model cannot even perceive.

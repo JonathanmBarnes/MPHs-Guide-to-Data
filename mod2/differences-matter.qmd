@@ -1,0 +1,71 @@
+---
+title: "Why Comparisons Matter"
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        header#title-block-header {
+          display: none !important;
+        }
+        </style>
+---
+
+## Everything Is Nothing with a Twist: Why Differences Matter
+
+A number can be true and still point you toward the wrong conclusion. “50 cases.” “12 falls.” “8% positive.” Those statements sound finished because they sound exact. Usually, they are not finished at all. They are fragments wearing the authority of measurement.
+
+The fix is not advanced math. It is discipline. Before you interpret a public-health number, complete it. Ask **what was counted, out of how many, over what period, and compared to what**. Until those pieces are visible, you may have a correct number without yet having an interpretable claim.
+
+### Start with a number that sounds finished
+
+Suppose a dashboard says **50 cases**. That sounds like information. It is not enough information. You still do not know whether you are looking at a crisis, a blip, a current surge, or routine background noise.
+
+What makes the claim interpretable is completion.
+
+```{mermaid}
+flowchart TD
+  A["50 cases"] --> B{"What is missing?"}
+  B --> C["What was counted?<br/>the event or numerator"]
+  B --> D["Out of how many?<br/>the denominator"]
+  B --> E["Over what period?<br/>the time window"]
+  B --> F["Compared to what?<br/>the reference point"]
+
+  C --> G["Interpretable public-health statement"]
+  D --> G
+  E --> G
+  F --> G
+```
+
+That is the whole point of the page. The number does not become more true as the sentence gets longer. It becomes more interpretable. Public-health numbers usually mislead not because they are false, but because they arrive unfinished.
+
+### The denominator changes the scale of the problem
+
+The denominator is usually the first missing piece that changes what a count means. “50 cases” in a nursing home with 60 residents is a concentrated event affecting most of the population. “50 cases” in a city of 3 million is rare. The count stayed at 50. The burden did not.
+
+The same mistake shows up in smaller settings too. “12 falls” sounds worse than “8 falls” until you learn that the first unit had 40 patients and the second had 400. Without the denominator, the larger count automatically feels more serious. Once the denominator appears, the question becomes more honest: which group had the greater burden relative to the number of people at risk?
+
+That is why raw counts are rarely enough on their own. They tell you that something happened. They do not reliably tell you how common it was. In public health, the whole matters because burden is almost always part-to-whole, not just event-by-event.
+
+### Time changes the kind of question you are answering
+
+The time window matters just as much. “50 cases this week” and “50 cases this year” are not two ways of saying the same thing. One tells you about pace. The other tells you about accumulation. Those are different public-health questions.
+
+That distinction is easy to miss because the number itself can stay unchanged while the interpretation shifts dramatically. A weekly count can suggest current acceleration or control. A yearly total can hide a short spike inside a calm-looking average. The same issue appears with percentages: “8% positive” sounds precise, but 8% this week and 8% across the full year are not interchangeable statements. One is a current signal. The other is a summary over time.
+
+So time is not decorative background information. It is part of the statistic. Without it, you cannot tell whether you are reading burden, speed, or a mixture of both.
+
+### Comparison tells you how to read the number
+
+Even when the count, denominator, and time window are visible, one more step usually remains. Compared to what?
+
+A number can describe a state of affairs, but comparison tells you how to read it. Fifty cases among 5,000 students this week means more once you know whether the usual level is 5, 20, or 200. The comparison does not replace the number. It tells you whether the value looks high, low, worsening, improving, ordinary, or unusual.
+
+This is also where bad interpretation often hides. Comparisons sound rigorous even when they quietly swap the denominator, mismatch the time window, or use a vague reference point. A sentence can therefore sound statistical while still being unfair. The practical reflex is simple: **complete the claim, then check whether the comparison is fair.**
+
+By now the pattern should be clear. A number becomes interpretable only when you can say what happened, in whom, out of how many, over what period, and against what reference point. That is the habit this section is meant to build.
+
+The next step is what happens when a count is formally attached to a whole and then translated into different comparison languages. That is where proportions, percentages, and ratios come in. But those labels only help after the more basic discipline is in place: **do not let a number travel without its denominator, its time window, and its comparison.**
+
+### Takeaway
+before interpreting a public-health number, ask what was counted, out of how many, over what period, and compared to what. That is what turns a number from an exact-sounding fragment into something you can actually think with.

@@ -1,0 +1,26 @@
+---
+title: "Resources & Extras"
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        header#title-block-header {
+          display: none !important;
+        }
+        </style>
+---
+
+## Dollar Fifty in Late Fees at the Public Library.
+
+-   [Monty Hall Problem — Numberphile](https://www.youtube.com/watch?v=4Lb-6rxZxx0)\
+    A short visual re-introduction to the game-show setup and why switching wins more often.
+
+-   [Seeing Theory — Probability Distributions](https://seeing-theory.brown.edu/probability-distributions/index.html)\
+    An interactive way to look at common distribution shapes instead of only reading about them.
+
+-   [Probability & Odds Applet](https://jonathanmbarnes.github.io/ProbsAndOddsApp/)\
+    Best for counts, proportions, probabilities, odds, base rates, and why framing can distort intuition.
+
+-   [CLT / Sampling Intuition Applet](https://jonathanmbarnes.github.io/CentralLimitApp/)\
+    Best for repeated sampling, convergence, regression to the mean, and how averages stabilize faster than raw outcomes.

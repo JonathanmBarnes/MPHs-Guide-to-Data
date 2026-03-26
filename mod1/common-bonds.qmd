@@ -1,0 +1,38 @@
+---
+title: "Categorical Data"
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        header#title-block-header {
+          display: none !important;
+        }
+        </style>
+---
+
+## Common Bonds for $600
+
+#### These variables sort people, conditions, favorite snacks, and types of animals.
+
+Categorical data are names for kinds of things, not amounts. Each value places an observation into a bucket. Some of those buckets are simply different from one another. Others have a meaningful order. That is the key split inside categorical data: **nominal** versus **ordinal**.
+
+**Nominal** variables are categories with no natural order. Blood type, home state, clinic site, treatment group, and district ID all fit here. The values identify which group an observation belongs to, but there is no meaningful “higher” or “lower.” That is why counts, proportions, and percentages make sense here, while an average usually does not.
+
+**Ordinal** variables are categories with a meaningful order, but without guaranteed equal spacing between the levels. Disease stage, pain severity, food security level, and many survey response scales work this way. `Mild` is clearly different from `severe`, and the order tells you something important. But that does not mean the steps between categories are evenly spaced like marks on a ruler.
+
+Education is a useful edge case because it shows why order is not the same thing as measurement. More schooling is clearly “higher,” so education is ordinal. But the jump from high school to some college is not the same kind of jump as BA to graduate or professional training in any fixed numeric sense. The categories tell you rank or position, not exact distance. Coding them as `1, 2, 3, 4` does not turn them into a true measurement.
+
+One of the most useful public-health lessons in this section hides inside categories that people are often tempted to throw away: `unknown`, `refused`, and `not applicable`. These are nominal categories describing the relationship to the question, not the trait itself. `Not applicable` means the question does not apply. `Refused` means the question applied, but the person chose not to answer. `Unknown` usually means the information was unavailable. Those are not just messy leftovers. They tell you something about how the data were collected, and keeping them separate can matter for interpretation.
+
+This also matters downstream. Once a variable is categorical, later summaries should respect that structure. For nominal variables, that usually means counts and proportions. For ordinal variables, it often means ordered distributions, medians when they are defensible, or the share above a meaningful threshold. If you treat categories like measurements, you can create averages that look official but do not describe anything real.
+
+```{mermaid}
+flowchart LR
+    A["Categorical data"] --> B["Nominal<br/>different groups, no order"]
+    A --> C["Ordinal<br/>ordered groups, uneven spacing"]
+    B --> D["Good first summaries:<br/>counts, proportions, percentages"]
+    C --> E["Good first summaries:<br/>ordered distributions,<br/>medians or threshold shares when appropriate"]
+```
+
+A quick check helps here: if the value could be replaced by a word or label without changing the meaning, you are probably looking at categorical data.

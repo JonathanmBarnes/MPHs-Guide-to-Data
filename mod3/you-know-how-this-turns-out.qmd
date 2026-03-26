@@ -1,0 +1,153 @@
+---
+title: "Hindsight Bias"
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        header#title-block-header {
+          display: none !important;
+        }
+        </style>
+---
+
+## You Know How This Is Going to Turn Out, Don’t You?
+
+Llewelyn Moss has taken a case of money from a drug deal gone bad, and now two different men are hunting him. One is Carson Wells, a professional Moss thinks might still be able to help. The other is Anton Chigurh, the killer already closing in. By the time Moss reaches a hospital pay phone and calls Wells, Wells is dead in a motel room chair. Chigurh answers the phone beside the body.
+
+Moss does not know that yet. He is still talking as though he has reached someone who can respond, warn him, or help him act. Chigurh is speaking from a room where that possibility is already gone. Moss is still treating the call as though it might change what happens next. Chigurh is not. Wells is already dead, and that changes how Chigurh hears the rest of the conversation. Moss gives him new information, but Chigurh does not treat it as something that might reopen the situation. He treats it as something to place inside a picture he already believes he understands.
+
+That shift is not limited to stories. Once an ending or explanation starts to feel settled, people stop reading evidence evenly. New information is still coming in, but it is no longer being judged in the same open way. A detail that fits the emerging conclusion starts to look more important because it fits. A detail that does not fit starts to look weaker, less relevant, or easier to explain away. That can happen while events are still unfolding, which is part of what confirmation bias does. Then, once the outcome is known, the same uneven reading hardens. What had been one possibility among several starts to look like the path that was there all along. That is part of what hindsight bias does. One bias helps build the story as it is happening. The other makes that story look obvious afterward.
+
+### When the ending starts pulling on the past
+
+Once the outcome is known, earlier details do not need to change for the past to feel different. The order of events can stay exactly the same. What changes is the weight those earlier details now seem to carry. A weak signal starts looking decisive. One warning among several starts feeling like *the* warning. Alternatives that had seemed plausible at the time begin looking careless in retrospect. The story grows tidier not because reality had been tidy, but because the known result is now pulling interpretation backward toward itself.
+
+That is the central distortion of hindsight bias. It does not usually invent new facts. It reorganizes old ones around a fixed ending. The uncertainty that had actually been there begins to disappear from memory. Several live possibilities shrink into one path that now feels cleaner and more foreseeable than it really was.
+
+Not every revision after new evidence is a mistake. Better information should change judgment. The problem is narrower than that and more slippery. There is a difference between saying, *now I know more*, and saying, *this should have been obvious all along*. The second move quietly erases what it had really been like before the outcome was settled, when several explanations may still have been reasonable and several next steps may still have been defensible.
+
+### When one story starts choosing its own evidence
+
+Once one explanation begins to feel right, evidence stops arriving on level ground. Supporting details stand out more readily. Conflicting details become easier to treat as noise, exceptions, or special cases. Hindsight bias makes the path behind the outcome look cleaner than it was. Confirmation bias helps the favored explanation keep its place.
+
+The two biases are different, but they work well together. One compresses past uncertainty. The other changes how current evidence is sorted. Together, they turn a contingent sequence into a story that feels both natural and well supported.
+
+### What this does to data
+
+Data analysis is especially vulnerable because once a pattern has been seen, it becomes difficult to recover what it felt like not to have seen it yet.
+
+A policy begins in March and the line bends in April. A subgroup shows a surprising change. A dashboard turns red before a bad outcome. Once those things are known, the alignment itself begins inviting a story. Variables, time windows, and comparisons that fit the ending gain weight. The rest recedes. A final narrative starts looking more coherent than the original evidence really was.
+
+This is where hindsight bias and confirmation bias often lock together. Hindsight bias makes one explanation feel more obvious than it really was. Confirmation bias then starts favoring the evidence that supports that explanation. A subgroup that fits the story gets highlighted. A time window that strengthens the pattern starts looking like the natural one to report. A conflicting comparison becomes easier to treat as secondary.
+
+A before-and-after sequence can be completely real while still leaving several explanations on the table. The fact that one story fits the observed ending does not mean it was the only story that could have fit, or even the best one. A change can follow an intervention without being caused by it. A warning can precede a crisis without uniquely predicting that exact crisis. A dashboard can flash before a bad quarter without having isolated the underlying mechanism that produced it.
+
+Public health work sees this constantly because the settings are noisy, the stakes are high, and the desire for a clear account is understandable. A program launches and an outcome improves, so the improvement begins feeling like the natural consequence of the launch. A hospital unit has an unusually bad quarter, receives attention, and then improves somewhat, which makes the response look more effective than it may actually have been. A county reports a sudden spike, attention focuses on one plausible cause, and later reporting starts orbiting that cause even while other contributors remain possible. In each case, the ending lends confidence to the explanation, and the favored explanation begins pulling evidence toward itself.
+
+### When extremes soften
+
+One of the easiest places for this to happen is regression to the mean. If you select cases because they were unusually high or unusually low on one measurement, many of them will look more typical on the next measurement even when nothing important changed underneath. Once that second measurement arrives, however, the movement is easy to narrate.
+
+```{r}
+#| label: fig-regression-to-mean
+#| fig-cap: "Extreme first measurements often look less extreme on re-measurement even when nothing causal changed underneath."
+#| classes: bare-plot
+#| echo: false
+#| warning: false
+#| message: false
+
+library(ggplot2)
+
+COL_BG       <- "#f7f6f3"
+COL_TEXT     <- "#343A40"
+COL_BLUE     <- "#2f6f8f"
+COL_ORANGE   <- "#E69F00"
+COL_LIGHT    <- "#d8dde3"
+
+Plot_theme <- function(
+    base_font    = c("Avenir Next", "Verdana", "sans-serif"),
+    heading_font = c("Trebuchet MS", "Avenir", "Verdana", "sans-serif"),
+    base_size    = 13
+) {
+  base_family    <- base_font[[1]]
+  heading_family <- heading_font[[1]]
+
+  theme_minimal(base_size = base_size, base_family = base_family) %+replace% theme(
+    plot.background  = element_rect(fill = COL_BG, color = NA),
+    panel.background = element_rect(fill = COL_BG, color = NA),
+    text = element_text(color = COL_TEXT),
+    panel.grid.major = element_line(color = "#cfdceb", linewidth = 0.45),
+    panel.grid.minor = element_line(color = "#e3edf7", linewidth = 0.25),
+    axis.line = element_line(color = "#9fb3c1"),
+    axis.text.x  = element_text(color = COL_TEXT, family = base_family, size = 13),
+    axis.text.y  = element_text(color = COL_TEXT, family = base_family, size = 13),
+    axis.title.x = element_text(color = COL_TEXT, family = heading_family, face = "bold", size = 14),
+    axis.title.y = element_text(color = COL_TEXT, family = heading_family, face = "bold", size = 14, angle = 90, margin = margin(r = 3)),
+    plot.title = element_text(family = heading_family, size = 16, face = "bold", color = "#2f3e46", margin = margin(b = 8)),
+    plot.subtitle = element_text(family = base_family, size = 13, color = "#3b4a55", margin = margin(b = 4)),
+    legend.title = element_text(family = heading_family, face = "bold", color = "#2f3e46"),
+    legend.text  = element_text(family = base_family, color = "#3b4a55"),
+    plot.margin = margin(t = 3, r = 5, b = 3, l = 5)
+  )
+}
+
+set.seed(91)
+
+N <- 1200
+true_score <- rnorm(N, mean = 100, sd = 12)
+y1 <- true_score + rnorm(N, mean = 0, sd = 10)
+y2 <- true_score + rnorm(N, mean = 0, sd = 10)
+
+cutoff <- quantile(y1, 0.90)
+selected <- y1 >= cutoff
+
+df <- data.frame(
+  first = y1,
+  second = y2,
+  group = ifelse(selected, "Top 10% on first measure", "All others")
+)
+
+means <- aggregate(cbind(first, second) ~ group, data = df, FUN = mean)
+
+ggplot(df, aes(first, second, color = group)) +
+  geom_point(alpha = 0.30, size = 1.2) +
+  geom_abline(slope = 1, intercept = 0, linetype = "dashed", linewidth = 0.8, color = COL_ORANGE) +
+  geom_point(
+    data = means,
+    aes(first, second, color = group),
+    size = 4,
+    inherit.aes = FALSE
+  ) +
+  scale_color_manual(values = c("All others" = COL_LIGHT, "Top 10% on first measure" = COL_BLUE)) +
+  labs(
+    title = "Extreme cases often look less extreme the next time",
+    subtitle = "Selection and ordinary variation can manufacture the appearance of improvement",
+    x = "First measurement",
+    y = "Second measurement",
+    color = NULL
+  ) +
+  Plot_theme(base_size = 13) +
+  theme(legend.position = "top")
+```
+
+A manager sees improvement after an intervention and credits the intervention. A clinician sees a less extreme follow-up value and credits a treatment decision. A policy team sees a calmer quarter after a crisis quarter and credits the response. Sometimes those stories will be right. Selection and ordinary variation already know how to produce something that looks like recovery.
+
+That is why regression to the mean is such a useful check on hindsight. The less extreme follow-up can feel as though it should have been expected, and once it happens the intervention story becomes easier to defend. By the time the account is retold, a selected extreme can quietly become a success story.
+
+### Before the story hardens
+
+```{mermaid}
+flowchart TD
+    A["Interesting outcome appears"] --> B["Candidate explanation"]
+    B --> C["What else could already produce this?"]
+    C --> D["Which details cut against the favored story?"]
+    D --> E["Does the pattern persist or replicate?"]
+    E --> F["Interpretation that has earned more trust"]
+```
+
+The discipline is not to refuse interpretation. It is to keep the ending from closing the world too quickly. Separate what is known now from what was knowable then. Separate evidence that tests a story from evidence that merely suits it. A settled ending makes those feel like the same thing. They are not.
+
+### Takeaway
+
+Once an ending feels settled, earlier uncertainty starts collapsing. Hindsight bias makes the path behind the outcome look cleaner and more predictable than it really was. Confirmation bias helps the favored explanation hold its place by making supporting details easier to notice and conflicting ones easier to push aside. Keep the world open a little longer: ask what alternatives were live at the time, what ordinary variation could already explain, and what evidence would still persuade you if you did not already know how this turns out.

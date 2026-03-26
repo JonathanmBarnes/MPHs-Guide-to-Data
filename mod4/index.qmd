@@ -1,0 +1,34 @@
+---
+format:
+  html
+---
+
+# If-Then-Else: Anyone who looks upon the world as if it were a game of chess deserves to lose
+
+#### Module 4
+
+Learning Objective: By the end of this module, you will be able to explain what kind of system modern generative AI is, distinguish fluent completion from grounded understanding, identify its main failure modes and downstream consequences, and describe why human judgment remains necessary when these systems are used in real settings.
+
+### A machine that seems to see everything
+
+In *Person of Interest*, Harold Finch builds the Machine, a surveillance system meant to sift through immense streams of human data and identify danger before it arrives. The show ran from 2011 to 2016, but the premise no longer feels especially distant: a system that takes in more than any person could, detects patterns no person could hold in mind at once, and begins to look like a way of seeing the world more completely than people do.
+
+Finch’s warning is not only that chess is simpler than life. It is that chess has exactly the kind of structure people are tempted to carry over into life: a closed board, fixed pieces, defined rules, visible limits, and a clear objective. Within that world, a move can be judged by whether it improves the position and increases the chance of winning. Inside the game, that logic is coherent. Outside it, the same habit can turn inhuman very quickly.
+
+Life is not a finished board. The field is incomplete, the costs do not fall evenly, and the people inside a situation are not pieces to be advanced, traded, sacrificed, or removed in service of a better position. People are not just numbers in statistics, and they are not pieces valued only for their role in winning. Human judgment is not just the ability to optimize toward an outcome. It is also the ability to recognize when the frame itself is wrong, when winning is too small a standard, and when a person should not have been reduced to a move at all.
+
+### Prediction wrapped as completion
+
+Modern generative AI invites a similar mistake in a different domain. These systems are prediction machines. A generative model does not look at a situation the way a person does and then report a judgment. It generates likely continuations from the material already in front of it. In many systems, that means learned probabilities over possible next tokens or related internal steps that can be turned into text, code, images, summaries, recommendations, or plans.
+
+Earlier modules made the harder point already: probability is not a guarantee. It describes tendency under a process, not certainty in a particular case. Generative systems do not return that uncertainty in raw form. They turn it into something finished: an answer, a summary, a recommendation, a plan. That can make weak grounding sound more settled than it is.
+
+The deeper risk is not just error. It is that a finished answer can begin to feel like finished understanding. Ambiguity starts to feel like delay, caution like inefficiency, and thought like the slow part before the real result arrives.
+
+The chapters that follow trace that mistake outward: first by separating statistical generation from thought, then by examining the social fluency that makes these systems easy to over-credit, the hallucinations and recursive errors that follow, the residue they leave in public writing, and the institutional damage that appears when tools built for generation are mistaken for judgment.
+
+::: callout-note
+**Keep this rule for the rest of the module:** do not start with *is this intelligent?* Start with *what process produced this answer, what was it optimized to do, what has been left out to make it feel complete, and what human judgment disappears if I trust it too quickly?*
+:::
+
+Earlier modules asked you not to let a number travel without its denominator, time window, and comparison. The same discipline belongs here. Do not let fluent output travel without asking what produced it, what are its incentives, where its grounding would have to come from, what was stripped out to make it feel settled, and who will absorb the consequences if it is trusted too far.
