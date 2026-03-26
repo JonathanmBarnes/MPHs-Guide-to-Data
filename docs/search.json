@@ -1,35 +1,33 @@
 [
   {
-    "objectID": "mod0/life-universe-everything.html",
-    "href": "mod0/life-universe-everything.html",
-    "title": "Life, the Universe, and Everything (Begins with Data)",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Don’t Panic",
     "section": "",
-    "text": "When widespread digital access first hinted at an “Age of Information,” many expected concrete evidence—not opinion—to steer public life, as previously restricted information in theory became accessible to everyone. We imagined a world where better decisions, and better results, would flow naturally from more effective research distribution, opened databases, faster computers, and interactive dashboards.\nYet the abundance from that access soon became overload. Misinformation, packaged as simpler, more compact stories presented as fact, was easier to digest and more entertaining. These narratives raced through social platforms, blogs, and alternative news sites (even main ones)—spreading faster than careful analysis or responsible reporting could keep up. And when reality checks did try to catch up, they were often long, unengaging, and easy to ignore. It will be discussed throughout, but consistently scientists are seen not just as competent and intelligent, but unable to communicate their work. This creates a rift; and then you consider that it was estimated 57% of the US adult population reads at or below level two of five in the most recent PIAAC study.\nThis is the paradox we face: information can only empower change when it’s translated clearly, ethically, and in ways that people can genuinely understand. That—not calculation or citation—is how your knowledge shapes decisions and lives in the world around us.",
+    "text": "Don’t Panic",
     "crumbs": [
-      "Welcome!",
-      "Why Data Matters"
+      "Don't Panic"
     ]
   },
   {
-    "objectID": "mod0/mostly-harmless.html",
-    "href": "mod0/mostly-harmless.html",
-    "title": "Mostly Harmless: What These Modules Are (and Aren’t)",
-    "section": "",
-    "text": "These modules are a (hopefully) gentle introduction to the way public health uses numbers. They’re meant to be read before—or right as—courses start, whether you’re headed into Epi I, Biostat I, a research position, or you’re simply uneasy around “stats.” They are short reads which I hope you find both engaging and you can dip into at your own pace. Think of them as mini orientation, not coursework: no problem sets, no grades. You’ll see Plain-English explanations, real world examples, and visuals. And if you choose, some additional information and things to engage with to further expose you to some of this environment. Additionally I’ve themed sections to the best of my ability to make it feel more entertaining, and less “school”. Your job here is judgment and intuition—learning what a things mean, what they don’t exactly, and what to ask next.\nMany people arrive reluctant to engage with numbers and a belief they simply are not good with them—not because that’s true, but because a past class or teacher made math feel hostile. The reaction based on those past experiences is understandable, but it can quietly cap what you get out of biostatistics if you let it. My own 8th grade math teacher told me I wouldn’t go anywhere because I wouldn’t record the steps of my work. An example of why in statistics, we settle for 95% confidence. The other 5% is a reminder that even the loudest opinions and the narrowest intervals can be wrong.\nThe point of starting now is to interrupt that cycle so you walk into week one comfortable to speak up, ask small precise questions, and give yourself permission to learn about data without feeling you’re surviving. The professors who teach Biostatistics I and II are very good at getting students where they need to go; they will do that for you too—if you put in the effort and allow them too.\nThe modules have a natural order: start here with Module 0 (which is most words), then move forward. There’s no stopwatch. Read in sequence, pause where something feels new, and come back as needed. The goal is comfort and clarity, not speed. Again, no grades. Success here is modest, practical, and pragmatic: a safety net that gives you steadier footing across the subject so you can follow the processes instead of white knuckling these courses. The aim is an early introduction that leaves you more at ease reading and talking about public health numbers—seeing data as observations with context (who/when/how), distinguishing ratios from rates and what each answers, understanding what distributions really are about, why odds suck (and why we still use them despite that) and expecting uncertainty to be part of any honest claim. Oh, and a module at the end talking about AI so you can grasp how they really work and what they fundamentally can’t do. It’s not about mastery; it’s about workable mental pictures, plain English language for the core ideas, and a simple habit of adding the missing context when you see a number. If that moves you from “just surviving” to moving with the material on your own terms, the modules did their job. I hope you find them helpful.",
+    "objectID": "index.html#an-mphs-guide-to-data",
+    "href": "index.html#an-mphs-guide-to-data",
+    "title": "Don’t Panic",
+    "section": "An MPH’s Guide to Data",
+    "text": "An MPH’s Guide to Data\n\nFor Those Who’d Rather Not",
     "crumbs": [
-      "Welcome!",
-      "What This Guide Is"
+      "Don't Panic"
     ]
   },
   {
-    "objectID": "mod0/not-to-be-taken-literally.html",
-    "href": "mod0/not-to-be-taken-literally.html",
-    "title": "Not to Be Taken Literally: Data, Statistics, and Other Common Misunderstandings",
+    "objectID": "mod0/so-long-and-thanks.html",
+    "href": "mod0/so-long-and-thanks.html",
+    "title": "So Long, and Thanks for All the Data (and the Help)",
     "section": "",
-    "text": "You already encounter statistics and data regularly, even when it doesn’t look like math: the “feels like” temperature on your weather app, wait times, estimated train arrivals, nutrition labels stating “per 100 g,” your step count, or even personalized streaming recommendations. Even every single AI, Chatbot, or Language model are foundationally built using statistics. The critical idea isn’t that everything reduces to numbers (even though it could if we wanted it), but that numbers are always attached to situations and our lives if we like it or not. When we say “data,” these are observations but with context—knowing who or what is being observed, where, when, and how the observation was made. Without that context, a number is just decoration. Think if someone just said four when arguing.\nThis submodule tries to reset your understanding of what “statistics” actually means before the first week starts throwing terms at you. Statistics is a way of making sense of imperfect information by studying uncertainty—it transforms messy, incomplete observations into clear statements about patterns people can act on. It is a reasoning craft that relies heavily on thoughtful design, clear communication, and careful interpretation—supported by software but never replaced by it.\nSeveral persistent misconceptions tend to get in the way. The first is that statistics—or for us biostats— is merely “more math” In practice, math usually runs quietly in the background; what you do is more design and reasoning. Frame questions clearly, select summaries appropriate for your data, and honestly communicate your degree of certainty. You can always do these calculations, but modern computing and software makes it more friendly. Another misconception is that statistics offers certainty. It doesn’t; instead, it helps you openly express uncertainty, enabling informed decisions. You should walk away from a statistics class understanding not that statistics are rigid but flawed and always taken with some caution. There’s also the misconception that statistics boils down to pushing buttons in software. Software tools are indeed useful, but without a clear research question, proper design, and reporting, they only produce confident nonsense. Many people also think “more data fixes everything.” More data can reduce random noise (We’ll look at distribution later), but it cannot fix poor definitions, biased sources, or incorrect comparisons. That’s why we hear about validation and who was the sample. Lastly, some assume statistics itself is neutral or inherently unbiased. Every choice—what to measure, who gets counted, what methods to use, and how results are shared—has discretion, and consequence. Good statistical practice involves transparently naming these choices and their limits. You must always be able to defend your choice.\nIf you keep only one idea from this page, make it this: statistics is the practice of asking careful questions and providing clear, honest answers in the face of uncertainty. Here, you won’t be asked to compute by hand (some numbers will come later). Instead, you’ll be exposed to more foundational concepts for use later to decide your own analyses. Developing this early will help you make smarter choices both academically and professionally, long beyond your first semester.",
+    "text": "Funding Acknowledgment\nThis project is supported by the Assistant Secretary for Technology Policy (ASTP) of the US Department of Health and Human Services (HHS) under grant number 90PH0005/01-13. This information or content and conclusions are those of the authors and should not be construed as the official position or policy of, nor should any endorsements be inferred by ASTP, HHS or the U.S. Government.",
     "crumbs": [
       "Welcome!",
-      "What Statistics Actually Is"
+      "About This Project"
     ]
   },
   {
@@ -580,37 +578,6 @@
     "crumbs": [
       "Generative AI",
       "<span class='chapter-number'>27</span>  <span class='chapter-title'>Ethics, Risk & Oversight</span>"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Don’t Panic",
-    "section": "",
-    "text": "Don’t Panic",
-    "crumbs": [
-      "Don't Panic"
-    ]
-  },
-  {
-    "objectID": "index.html#an-mphs-guide-to-data",
-    "href": "index.html#an-mphs-guide-to-data",
-    "title": "Don’t Panic",
-    "section": "An MPH’s Guide to Data",
-    "text": "An MPH’s Guide to Data\n\nFor Those Who’d Rather Not",
-    "crumbs": [
-      "Don't Panic"
-    ]
-  },
-  {
-    "objectID": "mod0/so-long-and-thanks.html",
-    "href": "mod0/so-long-and-thanks.html",
-    "title": "So Long, and Thanks for All the Data (and the Help)",
-    "section": "",
-    "text": "Funding Acknowledgment\nThis project is supported by the Assistant Secretary for Technology Policy (ASTP) of the US Department of Health and Human Services (HHS) under grant number 90PH0005/01-13. This information or content and conclusions are those of the authors and should not be construed as the official position or policy of, nor should any endorsements be inferred by ASTP, HHS or the U.S. Government.",
-    "crumbs": [
-      "Welcome!",
-      "About This Project"
     ]
   }
 ]

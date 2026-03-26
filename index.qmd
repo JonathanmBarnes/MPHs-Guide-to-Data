@@ -4,8 +4,6 @@ format:
 toc: false
 ---
 
-
-
 \
 
 ::::: title-page
@@ -21,9 +19,9 @@ toc: false
 
 \
 
-
 ::: tagline
 ## *An MPH's Guide to Data*
+
 ### *For Those Who'd Rather Not*
 :::
 
